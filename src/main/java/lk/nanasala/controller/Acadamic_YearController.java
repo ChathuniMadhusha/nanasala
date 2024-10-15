@@ -20,6 +20,11 @@ public class Acadamic_YearController {
     public List<Acadamic_Year> acadamic_years() {return acadamicyearDao.findAll();}
 
 
+    @RequestMapping(value = "/abc")
+    public String abc(){
+        return "abc";
+    }
+
     @PostMapping //add catogary
     public String postAcadamicYear(@RequestBody Acadamic_Year acadamic_year) {
 

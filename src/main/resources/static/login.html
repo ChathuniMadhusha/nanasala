@@ -1,0 +1,274 @@
+                                                                                                                                                                                                                                                                                                                         <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Login</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+
+
+
+
+
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+          rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
+    <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/Login.css" rel="stylesheet">
+    <script src="assets/Libraries/script/common.js"></script>
+    <script src="assets/Libraries/jQuery/jQuery.js"></script>
+
+
+</head>
+<body  style="background-size: cover; background-position: center; background-image:url(/assets/img/nanasala.jpg);">
+
+
+
+<!--<div class="text-center">
+    <img src="assets/img/pic.jpg" alt="pic" class="img-fluid" width="1000" height="1000" />
+</div>-->
+
+<main>
+    <div class="container">
+
+
+        <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
+
+                        <div class="d-flex justify-content-center py-4">
+                            <a href="index.html" class="logo d-flex align-items-center w-auto">
+                            </a>
+                        </div><!-- End Logo -->
+
+
+                        <div class="card mb-3 ">
+
+                            <div class="card-body" style="position: absolute;
+                                            transform: translate(-50%, -50%);
+                                            background: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3));
+                                            width: 380px;
+                                            padding: 50px 30px;
+                                            border-radius: 10px;
+                                            box-shadow: 7px 7px 60px #000;
+                                            left: 420px">
+
+                                <div class="pt-4 pb-2">
+                                    <h3 class="card-title text-center pb-0 fs-4" style="color: white">Login to Your
+                                        Account</h3>
+                                    <p class="text-center small"><h6 style="color: white">Enter your username & password
+                                    to login</h6></p>
+                                </div>
+
+                                <form class="row g-3 needs-validation" action="/login" method="POST" novalidate>
+                                    <div class="col-12">
+                                        <label for="yourUsername" class="form-label" style="color: white">Username</label>
+                                        <div class="input-group has-validation">
+                                            <span class="input-group-text" id="inputGroupPrepend">@</span>
+                                            <input type="text" name="username" class="form-control formcontrol" id="yourUsername"
+                                                   required>
+                                            <div class="invalid-feedback">Please enter your username.</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <label for="yourPassword" class="form-label" style="color: white">Password</label>
+                                        <input type="password" name="password" class="form-control formcontrol" id="yourPassword"
+                                               required>
+                                        <div class="invalid-feedback">Please enter your password!</div>
+                                    </div>
+                                    <br><br><br><br>
+
+                                    <div class="m-2 text-danger" style="display: none" id="showerror">
+                                        Incorrect User name Password...!
+                                    </div>
+
+
+                                    <div class="col-12">
+                                        <button class="btn btn-primary w-100 glow-on-hover" type="submit" style="background-color: #ff6a00">Login</button>
+                                    </div>
+
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                        Forgot Password
+                                    </button>
+
+
+
+
+
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+    </div>
+</main><!-- End #main -->
+
+
+
+<!-- Modal user name email-->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form onsubmit="return false">
+                    <input type="text" required placeholder="Enter User name" id="textUserName" class="form-control"><br>
+                    <input type="email" required placeholder="Enter Email" id="textUserEmail" class="form-control">
+                    <button type="submit" class="btn btn-primary" onclick="checkUserDetails()">Send Otp</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+
+                <div id="divShowOtp" class="d-none">
+                    <div class="row">
+                        <input type="text" placeholder="Enter OTP" id="textUserOtp" class="form-control">
+                        <button type="button" class="btn btn-primary" onclick="checkOTP()">Check Otp</button>
+                    </div>
+                </div>
+
+                <div id="divShowNewPassword" class="d-none">
+                    <div class="row">
+                        <input type="password" placeholder="Enter User Password" id="textUserPassword" class="form-control">
+                        <input type="password" placeholder="Enter Re-Password" id="textRTPassword" class="form-control" onkeyup="passwordCheck();">
+                        <button type="button" class="btn btn-primary" onclick="changeUserPassword(); ">Change Password</button>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+        class="bi bi-arrow-up-short"></i></a>
+
+<!-- Vendor JS Files -->
+<script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendor/chart.js/chart.min.js"></script>
+<script src="assets/vendor/echarts/echarts.min.js"></script>
+<script src="assets/vendor/quill/quill.min.js"></script>
+<script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+<script src="assets/vendor/tinymce/tinymce.min.js"></script>
+<script src="assets/vendor/php-email-form/validate.js"></script>
+
+<!--Template Main JS File -->
+<script src="assets/js/main.js"></script>
+
+<script>
+    window.addEventListener("load", ev => {
+        let url = window.location.href;
+        if (url == "http://localhost:8080/login?error=usernamepassworderror") {
+            showerror.style.display = "block";
+        } else {
+            showerror.style.display = "none";
+        }
+    })
+
+
+    const checkUserDetails = () => {
+
+        forgotUser = new Object();
+        forgotUser.username = textUserName.value;
+        forgotUser.email = textUserEmail.value;
+     console.log(forgotUser)
+        let serverResponse = httpServiceRequest("/changeuser/sendotp","POST",forgotUser);
+        if(serverResponse == "OK"){
+            alert("Send OTP successfully...");
+            divShowOtp.classList.remove("d-none");
+        } else {
+            alert("Error ... " + serverResponse);
+        }
+    }
+
+    const checkOTP = () => {
+
+        forgotUser = new Object();
+        forgotUser.username = textUserName.value;
+        forgotUser.email = textUserEmail.value;
+        forgotUser.otp = textUserOtp.value;
+        console.log(forgotUser)
+        let serverResponse = httpServiceRequest("/changeuser/checkotp","POST",forgotUser);
+        if(serverResponse == "OK"){
+            alert("OTP check successfully...!");
+            divShowNewPassword.classList.remove("d-none");
+        } else {
+            alert("Error ... " + serverResponse);
+        }
+
+    }
+
+    const changeUserPassword = () => {
+
+        forgotUser = new Object();
+        forgotUser.username = textUserName.value;
+        forgotUser.email = textUserEmail.value;
+        forgotUser.otp = textUserOtp.value;
+        forgotUser.newPassword = textRTPassword.value;
+        console.log(forgotUser)
+        let serverResponse = httpServiceRequest("/changeuser/changeforgetuserpassword","POST",forgotUser);
+        if(serverResponse == "OK"){
+            alert("Password change successfully...!");
+            window.location.reload();
+        } else {
+            alert("Password change not successfully " + serverResponse);
+        }
+
+    }
+
+    const passwordCheck = () => {
+
+        let password = textUserPassword.value;
+        let repassword = textRTPassword.value;
+
+        if(password == repassword){
+            textRTPassword.style.border = "2px solid green";
+            forgotUser.newPassword = repassword;
+        } else {
+            textRTPassword.style.border   = "2px solid red";
+            forgotUser.newPassword = null;
+        }
+
+    }
+
+
+
+
+
+
+</script>
+
+</body>
+
+</html>

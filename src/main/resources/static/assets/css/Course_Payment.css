@@ -1,0 +1,195 @@
+.formcontrol {
+
+  border-top-right-radius: 5px !important;
+  border-bottom-right-radius: 5px !important;
+  border-style: black;
+  padding: 5px;
+
+}
+
+#sidebar-nav
+a:hover{
+    background: #ff6a1b;
+    color: rgba(255,255,255,1);
+}
+
+
+/* checkbox {
+  border-radius: 20px;
+}
+*/
+.formcontrol:focus {
+
+  box-shadow: none;
+ border: 2px solid #114a65;
+
+}
+
+.setValid:focus{
+    box-shadow: none;
+    border: 2px solid green;
+}
+
+.formcontrol:read-only {
+
+  box-shadow: none;
+
+}
+
+.rad-label {
+  display: flex;
+  align-items: center;
+  border-radius: 100px;
+  margin: 10px 0;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.rad-input {
+  display: none;
+}
+
+.rad-design {
+  width: 15px;
+  height: 15px;
+  border-radius: 100px;
+  background: #114a65;
+  position: relative;
+}
+
+.rad-design::before {
+  content: '';
+  display: inline-block;
+  width: inherit;
+  height: inherit;
+  border-radius: inherit;
+  background: rgb(211, 210, 210);
+  transform: scale(1.1);
+  transition: .3s;
+}
+
+.rad-input:checked+.rad-design::before {
+  transform: scale(0);
+}
+
+h6 {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.form-text {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.rad-text {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/*body {
+  
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 20px;
+  padding: 20px;
+  
+}*/
+#cr:focus {
+  border: none !important;
+}
+
+
+    
+
+  #btnAddCourse{
+      /*background-color: #0a852a;*/
+      border-color: #198754;
+      border-width: 5px;
+      /*color: black;*/
+      padding: 10px 60px;
+      font-size: 15px;
+      /*cursor: pointer;*/
+      border-radius: 5px;
+      border-radius: 15px;
+
+  
+  }
+
+  #btnUpdate{
+      /* background-color: #dd7f0a;*/
+      border-color: #ffc516;
+      /* color: white;*/
+      border-width: 5px;
+      /*color: #0b585e;*/
+      padding: 10px 60px;
+      font-size: 15px;
+      /* cursor: pointer;*/
+      border-radius: 15px;
+  }
+
+#btnClearCoPay{
+    /* background-color: #dd7f0a;*/
+    border-color: #dc3545;
+    /* color: white;*/
+    border-width: 5px;
+    /*color: #0b585e;*/
+    padding: 10px 60px;
+    font-size: 15px;
+    /*cursor: pointer;*/
+    border-radius: 15px;
+}
+
+  .btn3{
+    background-color: #d10000;
+    border: none;
+    color: white;
+    padding: 10px 60px;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    border-radius: 15px;
+    }
+
+
+    .btnStyle{
+      border-radius: 30px;
+      border-width: 4px;
+      
+          }
+      
+          .btnview{
+            border-color: #0b585e; 
+
+          
+          }
+      
+          .btndelete{
+            border-color: #0b585e; 
+          }
+      
+          .btnedit{
+            border-color: #0b585e; 
+          }
+
+         .btnview:hover{
+          background-color: rgb(10, 214, 221);
+         }
+
+         .btndelete:hover{
+          background-color: rgb(226, 50, 50);
+         }
+
+         .btnedit:hover{
+          background-color: rgb(241, 241, 75);
+         }
+
+         .dataTables_filter{
+         padding-bottom: 10px;
+         
+         }

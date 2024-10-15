@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Testing</title>
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link rel="stylesheet" href="assets/Libraries/fontawesom/css/all.css">
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+
+  <script src="assets/Libraries/jQuery/jQuery.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
+
+  <script type="text/javascript" charset="utf8"
+          src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
+
+
+  <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+  <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+
+<!--  <link rel="stylesheet" href="assets/css/User_Details.css">-->
+<!--  <script src="assets/js/User_Details.js"></script>-->
+<!--  <script src="assets/Libraries/script/common.js"></script>-->
+  <!--bs min js-->
+  <!-- <script src="assets/Libraries/bootstrap/js/bootstrap.bundle.min.js"></script>-->
+
+  <link rel="stylesheet" href="assets/iziToast/css/iziToast.min.css">
+  <script src="assets/iziToast/js/iziToast.min.js"></script>
+
+</head>
+<body>
+
+</body>
+
+
+name :
+<select id="cmbList" class="form-select formcontrol" required
+        data-bs-toggle="tooltip" data-bs-placement="right"
+        title="Select Course Status"
+        onchange="getTable();">
+
+  <option>one</option>
+  <option>two</option>
+  <option>three</option>
+
+
+</select>
+
+
+
+<div id="divTable">
+
+</div>
+
+
+
+<script>
+
+function getTable(){
+
+  divTable.innerHTML = "";
+  let table = document.createElement("table");
+  table.classList.add("table");
+  table.classList.add("table-light");
+  table.id = ("testTable");
+
+
+  let tblHeader = document.createElement("thead");
+
+  let tblRow = document.createElement("tr");
+
+  let index = document.createElement("td")
+  index.innerText = "ID";
+  tblRow.appendChild(index);
+
+  let name = document.createElement("td")
+  name.innerText = "Name";
+  tblRow.appendChild(name);
+
+  let Age = document.createElement("td")
+  Age.innerText = "Age";
+  tblRow.appendChild(Age);
+
+  let checked = document.createElement("td")
+  checked.innerText = "Attend";
+  tblRow.appendChild(checked);
+
+
+  tblHeader.appendChild(tblRow);
+  table.appendChild(tblHeader);
+  divTable.appendChild(table);
+
+
+
+}
+
+</script>
+
+</html>

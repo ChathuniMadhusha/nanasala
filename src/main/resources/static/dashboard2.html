@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Dashboard - NiceAdmin Bootstrap Template</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link rel="stylesheet" href="assets/Libraries/fontawesom/css/all.css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/Dashboard.css">
+  <script src="assets/Libraries/jQuery/jQuery.js"></script>
+  <script src="assets/Libraries/script/common.js"></script>
+  <script src="assets/Libraries/script/loging.js"></script>
+
+  <link rel="stylesheet" href="assets/iziToast/css/iziToast.min.css">
+
+  <link rel="stylesheet" href="assets/Libraries/Style/select2-bootstrap.min.css">
+  <script src="assets/iziToast/js/iziToast.min.js"></script>
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+
+
+
+
+
+  <header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="d-flex align-items-center justify-content-between">
+<!--      <a href="index.html" class="logo d-flex align-items-center">-->
+
+<!--        <span class="d-none d-lg-block" style="color: white">Nanasala ICT Center, Gampaha</span>-->
+<!--      </a>-->
+      <img src="onlynanasala.png" height="120" width="150">
+      <i class="bi bi-list toggle-sidebar-btn" style="color: white"></i>
+    </div><!-- End Logo -->
+
+
+
+    <nav class="header-nav ms-auto">
+      <ul class="d-flex align-items-center">
+
+
+
+        <li class="nav-item dropdown">
+
+
+        </li><!-- End Notification Nav -->
+
+        <li class="nav-item dropdown">
+
+
+        </li><!-- End Messages Nav -->
+
+
+        <li class="nav-item dropdown pe-3">
+
+          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+            <img id="imgLoggedUser"  class="rounded-circle">
+            <span id="spmLoggedUser" class="d-none d-md-block dropdown-toggle ps-2"></span>
+          </a><!-- End Profile Iamge Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+            <li class="dropdown-header">
+              <h6 id="UserName"></h6>
+              <span id="spnUserRole"></span>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                <i class="bi bi-person"></i>
+                <span>My Profile</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="">
+                <i class="bi bi-gear"></i>
+                <span>Account Settings</span>
+              </a>
+            </li>
+
+
+
+
+
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
+                <i class="bi bi-question-circle"></i>
+                <span>Need Help?</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="#" onclick="logoutMC()">
+                <i class="bi bi-box-arrow-right"></i>
+                <span>Sign Out</span>
+              </a>
+            </li>
+
+
+
+
+          </ul><!-- End Profile Dropdown Items -->
+        </li><!-- End Profile Nav -->
+
+      </ul>
+    </nav><!-- End Icons Navigation -->
+
+  </header><!-- End Header -->
+
+
+
+
+  <!--start-->
+  <aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav" >
+
+      <li class="nav-item" >
+        <a class="nav-link collapsed" href="/dashboard" >
+          <i class="fa-solid fa-house " style="color: black"></i>
+          <span style="color: black"><b>HOME</b></span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#" >
+          <i class="fa-solid fa-sliders" style="color: black"></i><span style="color: black">Administration</span><i
+                class="fa-solid fa-caret-down ms-auto"></i>
+        </a>
+        <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li id="MANAGE_USER_DETAILS" >
+            <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="" href="/user">
+              <i  class="fa-solid fa-star" style="color: black"></i><span
+                    style="color: black"  >User</span>
+            </a>
+          </li>
+          <li id="MANAGE_EMPLOYEE_DETAILS">
+            <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="" href="/employee">
+              <i  class="fa-solid fa-star" style="color:black"></i><span
+                    style="color: black" >Employee</span>
+            </a>
+          </li>
+          <li id="MANAGE_PRIVILAGE">
+            <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="" href="/privilage">
+              <i  class="fa-solid fa-star" style="color: black"></i><span
+                    style="color: black" >Privilege</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Components Nav -->
+
+      <li id="STUDENT_DETAILS" class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="" href="/student">
+          <i  class="fa-sharp fa-solid fa-children" style="color: black"></i>
+          <span style="color: black" >Add Student</span>
+        </a>
+      </li><!-- End Forms Nav -->
+
+
+      <li id="STUDENT_BATCH_REGISTRTAION" class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="" href="/stubatchreg">
+          <i  class="fa-regular fa-id-card" style="color: black"></i>
+          <span style="color: black" >Batch Registration</span>
+        </a>
+      </li>
+
+      <li id="COURSE_PAYMENT" class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="" href="/coursepayment">
+          <i  class="fa-sharp fa-solid fa-money-bill" style="color: black"></i>
+          <span style="color: black"
+          >Student Payments</span>
+        </a>
+      </li>
+
+
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="" href="/attendance">
+          <i  class="fa-solid fa-check-to-slot" style="color: black"></i><span style="color: black" id="ATTENDANCE_MANAGEMENT"
+        >Student Attendance</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">
+          <i class="fa-brands fa-discourse" style="color: black"></i><span style="color: black"
+        >Course Implementations</span><i
+                class="fa-solid fa-caret-down ms-auto"></i>
+        </a>
+        <ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li id="COURSE_IMPLEMENTATION">
+            <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="" href="/course">
+              <i  class="fa-solid fa-star" style="color: black"></i><span style="color: black"
+            >Implement Course</span>
+            </a>
+          </li>
+          <li id="STUDENT_BATCH_IMPLEMENTATION">
+            <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="" href="/batch">
+              <i  class="fa-solid fa-star" style="color: black"></i><span style="color: black"
+            >Implement Batch</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Icons Nav -->
+
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#chartss-nav" data-bs-toggle="collapse" href="#" >
+          <i class="fa-solid fa-sliders" style="color: black"></i><span style="color: black">Exam</span><i
+                class="fa-solid fa-caret-down ms-auto"></i>
+        </a>
+        <ul id="chartss-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li id="MANAGE_EXAM" >
+            <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="" href="/exam">
+              <i  class="fa-solid fa-star" style="color: black"></i><span
+                    style="color: black"  >Define Exam</span>
+            </a>
+          </li>
+          <li id="MANAGE_EXAM_APPLICATION">
+            <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="" href="/exam_application">
+              <i  class="fa-solid fa-star" style="color:black"></i><span
+                    style="color: black" >Exam Application</span>
+            </a>
+          </li>
+          <li id="MANAGE_EXAM_RESULT">
+            <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="" href="/exam_result">
+              <i  class="fa-solid fa-star" style="color: black"></i><span
+                    style="color: black" >Exam Result</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Components Nav -->
+
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="" href="/lecturehall">
+          <i  class="fa-solid fa-check-to-slot" style="color: black"></i><span style="color: black" id="LECTURE_HALL_MANAGEMENT"
+        >Lecture Hall Management</span>
+        </a>
+      </li>
+
+
+
+      <!-- <li class="nav-item">
+           <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
+               <i class="fa-solid fa-landmark" style="color: black"></i><span style="color: black"
+           >Lecture Hall</span><i
+                   class="fa-solid fa-caret-down ms-auto"></i>
+           </a>
+           <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+               <li id="LECTURE_HALL_MANAGEMENT">
+                   <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="" href="/lecturehall">
+                       <i  class="fa-solid fa-star" style="color: black"></i><span style="color: black"
+                   >Lecture Hall Management</span>
+                   </a>
+               </li>
+               <li id="SESSION_MANAGEMENT">
+                   <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="" href="/session">
+                       <i  class="fa-solid fa-star" style="color: black"></i><span style="color: black"
+                   >Session Management</span>
+                   </a>
+               </li>
+           </ul>
+       </li>--><!-- End Charts Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
+          <i class="fa-solid fa-face-grin-beam-sweat" style="color: black"></i><span style="color: black"
+        >Reports</span><i
+                class="fa-solid fa-caret-down ms-auto"></i>
+        </a>
+        <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a  href="/paymentreport">
+              <i class="fa-solid fa-star" style="color: black"></i><span style="color: black"
+            >Payment Report</span>
+            </a>
+          </li>
+          <li>
+            <a href="/arrearsreport">
+              <i class="fa-solid fa-star" style="color: black"></i><span style="color: black"
+                                                                         style="color: white;">Arrears Report</span>
+            </a>
+          </li>
+          <li>
+            <a  href="/batchreport">
+              <i class="fa-solid fa-star" style="color: black"></i><span style="color: black"
+            >Batch Report</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Tables Nav -->
+
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" onclick="logoutMC()">
+          <i class="fa-solid fa-right-to-bracket icon" style="color: black"></i>
+          <span style="color: black">Logout</span>
+        </a>
+      </li><!-- End Login Page Nav -->
+
+
+    </ul>
+
+  </aside><!-- End Sidebar-->
+
+  <main id="main" class="main">
+
+    <div class="pagetitle">
+      <div class="row">
+        <div class="col-6">
+          <h1>Dashboard</h1>
+          <nav>
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+              <li class="breadcrumb-item active">Dashboard</li>
+            </ol>
+          </nav>
+        </div>
+
+        <div class="col-4">
+
+        </div>
+
+        <div class="col-2">
+          <!-- Button trigger modal -->
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="refreshProfileEditForm()">
+            Change user profile
+          </button>
+
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Change user profile</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+
+                  <!--username-->
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="mb-3">
+                        <label for="txtUserName" class="form-label">
+                          <h6><b>&nbsp&nbspUser Name : <b><span
+                                  style="color: red;"><sup>(Required)</sup></span>
+                          </b></b></h6>
+                        </label>
+                        <div class="input-group">
+                          <span class="input-group-text">
+                            <span style="color: #114a65;"><i class="fa-solid fa-user"></i></span>
+                          </span>
+                          <input type="text" name="username" class="form-control formcontrol" id="txtUserName"
+                                 data-bs-toggle="tooltip"
+                                 data-bs-placement="top" title="Ex: Kamalss"
+                                 onkeyup="textFieldValidator(txtUserName,'^[A-Z][a-z0-9]{3,15}$','logedUser','username','oldlogedUser')"
+                                 required>
+                        </div>
+                        <div id="place" class="form-text">&nbsp&nbspEx: Kamal@01</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!--Password-->
+
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="mb-3">
+                        <label for="txtCurrentPassword" class="form-label">
+                          <h6><b>&nbsp&nbspCurrent Password : <b><span
+                                  style="color: red;"><sup>(Required)</sup></span>
+                          </b></b></h6>
+                        </label>
+                        <div class="input-group">
+                          <span class="input-group-text">
+                            <span style="color: #114a65;"><i class="fa-solid fa-user"></i></span>
+                          </span>
+                          <input type="text" name="username" class="form-control formcontrol" id="txtCurrentPassword"
+                                 data-bs-toggle="tooltip"
+                                 data-bs-placement="top" title="Ex: Kamalss"
+                                 onkeyup="textFieldValidator(txtCurrentPassword,'^[A-Za-z0-9]{4,10}$','logedUser','currentpassword','oldlogedUser')"
+                                 required>
+                        </div>
+                        <div id="place" class="form-text">&nbsp&nbspEx: Kamal@01</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="mb-3">
+                        <label for="pwd" class="form-label">
+                          <h6><b>&nbsp&nbspNew Password : <b><span
+                                  style="color: red;"><sup>(Required)</sup></span>
+                          </b></b></h6>
+                        </label>
+                        <div class="input-group">
+                          <span class="input-group-text">
+                            <span style="color: #114a65;"><i
+                                    class="fa-sharp fa-solid fa-key"></i></span>
+                          </span>
+                          <input type="password" name="password" class="form-control formcontrol" id="pwd"
+                                 onkeyup="textFieldValidator(pwd,'^[A-Za-z0-9]{4,10}$','logedUser','changepassword','oldlogedUser')"
+                                 required>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <!--Email-->
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="mb-3">
+                        <label for="txtEmail" class="form-label">
+                          <h6><b>&nbsp&nbspE-mail : <b>
+                          </b></b></h6>
+                        </label>
+                        <div class="input-group">
+                          <span class="input-group-text">
+                            <span  style="color: #114a65;"><i class="fa-solid fa-envelope"></i></span>
+                          </span>
+                          <input type="text" class="form-control formcontrol" id="txtEmail" data-bs-toggle="tooltip"
+                                 data-bs-placement="top" title="Ex: kamal@gmail.com" onkeyup="textFieldValidator(txtEmail,'^[A-za-z0-9]{5,20}[@][a-z]{4,10}[.][a-z]{2,5}$','logedUser','email','oldlogedUser')">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary" onclick="submitProfileSettings()" >Submit user settings</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div><!-- End Page Title -->
+
+
+    <section class="section dashboard">
+      <div class="row">
+
+        <!-- Left side columns -->
+        <div class="col-lg-8">
+          <div class="row">
+
+            <!-- Sales Card -->
+            <div class="col-xxl-4 col-md-6">
+              <div class="card info-card sales-card">
+
+
+
+                <div class="card-body">
+                  <h5 class="card-title">All Registered Student</h5>
+
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <div class="ps-3">
+                      <h6 id="regStudent"></h6>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div><!-- End Sales Card -->
+
+            <!-- Revenue Card -->
+            <div class="col-xxl-4 col-md-6">
+              <div class="card info-card revenue-card">
+
+
+
+                <div class="card-body">
+                  <h5 class="card-title">All Batches</h5>
+
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="fa-solid fa-chalkboard-user"></i>
+                    </div>
+                    <div class="ps-3">
+                      <h6 id="batchCount"></h6>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div><!-- End Revenue Card -->
+
+            <!-- Customers Card -->
+            <div class="col-xxl-4 col-xl-12">
+
+              <div class="card info-card customers-card">
+
+
+
+                <div class="card-body">
+                  <h5 class="card-title">All Staff</h5>
+
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="fa-solid fa-users"></i>
+                    </div>
+                    <div class="ps-3">
+                      <h6 id="staffCount"></h6>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+            </div><!-- End Customers Card -->
+
+            <!-- Reports -->
+
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="assets/img/book.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                  <img src="assets/img/student.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                  <img src="assets/img/lap.jpg" class="d-block w-100" alt="...">
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+
+
+
+
+          <!-- End Reports -->
+
+            <!-- Recent Sales -->
+            <div class="col-12">
+              <div class="card recent-sales overflow-auto">
+
+                <div class="filter">
+                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                    <li class="dropdown-header text-start">
+                      <h6>Filter</h6>
+                    </li>
+
+                    <li><a class="dropdown-item" href="#">Today</a></li>
+                    <li><a class="dropdown-item" href="#">This Month</a></li>
+                    <li><a class="dropdown-item" href="#">This Year</a></li>
+                  </ul>
+                </div>
+
+
+
+              </div>
+            </div><!-- End Recent Sales -->
+
+
+
+          </div>
+        </div><!-- End Left side columns -->
+
+        <!-- Right side columns -->
+        <div class="col-lg-4">
+
+          <!-- Recent Activity -->
+
+
+            <div class="card-body">
+              <h5 class="card-title">Ongoing Courses </h5>
+
+              <div class="activity" id="activeBatchList">
+
+
+              </div>
+
+            </div>
+
+
+
+          <b>Finished Exams</b>
+          <div style="margin-top: 30px; margin-right:30px ; margin-left: 30px;">
+            <div class="row mt-2">
+              <table id="tblFinishedexam" class="table" style="color: #114a65; font-style: normal; font-family: Arial, Helvetica, sans-serif; ">
+                <thead>
+                <tr>
+                  <th style="background-color: #ff6a1b; color: black; border-bottom-left-radius: 10px; border-top-left-radius: 10px;">Exam Name</th>
+                  <th style="background-color: #ff6a1b; border-bottom-right-radius: 10px; border-top-right-radius: 10px; color: black; ">Option</th>
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+
+
+
+
+          <b>Finished Batches</b>
+          <div style="margin-top: 30px; margin-right:30px ; margin-left: 30px;">
+            <div class="row mt-2">
+              <table id="tblFinishedbatch" class="table" style="color: #114a65; font-style: normal; font-family: Arial, Helvetica, sans-serif; ">
+                <thead>
+                <tr>
+                  <th style="background-color: #ff6a1b; color: black; border-bottom-left-radius: 10px; border-top-left-radius: 10px;">Batch Name</th>
+                  <th style="background-color: #ff6a1b; border-bottom-right-radius: 10px; border-top-right-radius: 10px; color: black; ">Option</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+
+
+
+
+
+          </div><!-- End Recent Activity -->
+
+          <!-- Recent Activity -->
+          <div class="card">
+            <div class="filter">
+              <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+              <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                <li class="dropdown-header text-start">
+                  <h6>Filter</h6>
+                </li>
+
+                <li><a class="dropdown-item" href="#">Today</a></li>
+                <li><a class="dropdown-item" href="#">This Month</a></li>
+                <li><a class="dropdown-item" href="#">This Year</a></li>
+              </ul>
+            </div>
+
+
+          </div><!-- End Recent Activity -->
+
+
+
+
+          <!-- News & Updates Traffic -->
+<!--          <div class="card">-->
+<!--            <div class="filter">-->
+<!--              <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>-->
+<!--              <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">-->
+<!--                <li class="dropdown-header text-start">-->
+<!--                  <h6>Filter</h6>-->
+<!--                </li>-->
+
+<!--                <li><a class="dropdown-item" href="#">Today</a></li>-->
+<!--                <li><a class="dropdown-item" href="#">This Month</a></li>-->
+<!--                <li><a class="dropdown-item" href="#">This Year</a></li>-->
+<!--              </ul>-->
+<!--            </div>-->
+
+<!--            <div class="card-body pb-0">-->
+<!--              <h5 class="card-title">News &amp; Updates <span>| Today</span></h5>-->
+
+<!--              <div class="news">-->
+<!--                <div class="post-item clearfix">-->
+<!--                  <img src="assets/img/news-1.jpg" alt="">-->
+<!--                  <h4><a href="#">Nihil blanditiis at in nihil autem</a></h4>-->
+<!--                  <p>Sit recusandae non aspernatur laboriosam. Quia enim eligendi sed ut harum...</p>-->
+<!--                </div>-->
+
+<!--                <div class="post-item clearfix">-->
+<!--                  <img src="assets/img/news-2.jpg" alt="">-->
+<!--                  <h4><a href="#">Quidem autem et impedit</a></h4>-->
+<!--                  <p>Illo nemo neque maiores vitae officiis cum eum turos elan dries werona nande...</p>-->
+<!--                </div>-->
+
+<!--                <div class="post-item clearfix">-->
+<!--                  <img src="assets/img/news-3.jpg" alt="">-->
+<!--                  <h4><a href="#">Id quia et et ut maxime similique occaecati ut</a></h4>-->
+<!--                  <p>Fugiat voluptas vero eaque accusantium eos. Consequuntur sed ipsam et totam...</p>-->
+<!--                </div>-->
+
+<!--                <div class="post-item clearfix">-->
+<!--                  <img src="assets/img/news-4.jpg" alt="">-->
+<!--                  <h4><a href="#">Laborum corporis quo dara net para</a></h4>-->
+<!--                  <p>Qui enim quia optio. Eligendi aut asperiores enim repellendusvel rerum cuder...</p>-->
+<!--                </div>-->
+
+<!--                <div class="post-item clearfix">-->
+<!--                  <img src="assets/img/news-5.jpg" alt="">-->
+<!--                  <h4><a href="#">Et dolores corrupti quae illo quod dolor</a></h4>-->
+<!--                  <p>Odit ut eveniet modi reiciendis. Atque cupiditate libero beatae dignissimos eius...</p>-->
+<!--                </div>-->
+
+<!--              </div>&lt;!&ndash; End sidebar recent posts&ndash;&gt;-->
+
+<!--            </div>-->
+<!--          </div>&lt;!&ndash; End News & Updates &ndash;&gt;-->
+
+        </div><!-- End Right side columns -->
+
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/chart.js/chart.min.js"></script>
+  <script src="assets/vendor/echarts/echarts.min.js"></script>
+  <script src="assets/vendor/quill/quill.min.js"></script>
+  <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="assets/vendor/tinymce/tinymce.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+<!--<script>-->
+
+<!--  // let activecourses = getServiceRequest("/course/activecourses")-->
+<!--  // activeBatchList.innerText = activecourses.course_name;-->
+
+<!--  let activecourses = getServiceRequest("/course/activecourses")-->
+<!--  if(Array.isArray(activecourses)){-->
+<!--    let courseNamesText = activecourses.map(course => course.course_name).join('\n');-->
+<!--    activeBatchList.innerText = courseNamesText;-->
+<!--  } else {-->
+<!--    activeBatchList.innerText = 'No active courses available';-->
+<!--  }-->
+
+<!--  let stuCount = getServiceRequest("/student/activestudent")-->
+<!--  regStudent.innerText = stuCount.studentno;-->
+
+<!--  let bCount = getServiceRequest("/batch/activeBatches")-->
+<!--  batchCount.innerText = bCount.id;-->
+
+<!--  let staCount = getServiceRequest("/employee/activeEmployee")-->
+<!--  staffCount.innerText = staCount.id;-->
+
+<!--  generateFinishedExam();-->
+<!--  generateBatch();-->
+
+
+<!-- function generateBatch(){-->
+<!--   let finishbatchlist = getServiceRequest("/batch/getfinishedbatchbycdlist")-->
+<!--   let batchStatuses = getServiceRequest("/batchstatus/getlist")-->
+<!--   let tableBody =  tblFinishedbatch.children[1]-->
+<!--   tableBody.innerHTML = "";-->
+
+<!--   for(let index in finishbatchlist){-->
+
+<!--     let tr = document.createElement("tr");-->
+<!--     //list eke inn plaweniyage id eka gannwa-->
+<!--     tr.id = JSON.stringify(finishbatchlist[index]);-->
+
+<!--     let batchnameTD = document.createElement("td");-->
+<!--     batchnameTD.innerText=finishbatchlist[index].batch_name;-->
+<!--     tr.appendChild(batchnameTD);-->
+
+<!--     let buttonTD = document.createElement("td");-->
+<!--     let button = document.createElement("button");-->
+<!--     button.onclick = function (){-->
+<!--       let batch = JSON.parse(this.parentNode.parentNode.id);-->
+<!--       batch.batch_status_id = batchStatuses[1];-->
+<!--       let putresponce = httpServiceRequest("/batch", "PUT", batch);-->
+<!--       if (putresponce == "0") {-->
+<!--         iziToast.success({-->
+<!--           title: 'Update Successfully...!',-->
+<!--         });-->
+<!--         generateBatch();-->
+<!--       } else {-->
+<!--         iziToast.error({-->
+<!--           title: 'Error Not Successfully Update...' + putresponce,-->
+<!--           position: 'topRight',-->
+<!--           //message: 'Not Successfully inserted \n' + serverResponce,-->
+<!--         });-->
+<!--       }-->
+<!--     }-->
+
+<!--     button.innerText = "Finish";-->
+<!--     button.className = "btn btn-primary";-->
+<!--     buttonTD.appendChild(button);-->
+<!--     tr.appendChild(buttonTD);-->
+
+
+<!--     tableBody.appendChild(tr);-->
+
+
+
+
+
+
+<!--   }-->
+
+<!-- }-->
+
+<!--  function generateFinishedExam(){-->
+<!--    let finishexamlist = getServiceRequest("/exam/getfinishedexamlist")-->
+<!--    let examStatuses = getServiceRequest("/examstatus/getlist")-->
+<!--    let tableBody =  tblFinishedexam.children[1]-->
+<!--    tableBody.innerHTML = "";-->
+
+<!--    for(let index in finishexamlist){-->
+
+<!--      let tr = document.createElement("tr");-->
+<!--      //list eke inn plaweniyage id eka gannwa-->
+<!--      tr.id = JSON.stringify(finishexamlist[index]);-->
+
+<!--      let examnameTD = document.createElement("td");-->
+<!--      examnameTD.innerText=finishexamlist[index].exam_name;-->
+<!--      tr.appendChild(examnameTD);-->
+
+<!--      let buttonTD = document.createElement("td");-->
+<!--      let button = document.createElement("button");-->
+<!--      button.onclick = function (){-->
+<!--        let exam = JSON.parse(this.parentNode.parentNode.id);-->
+<!--        exam.exam_status = examStatuses[1];-->
+<!--        let putresponce = httpServiceRequest("/exam", "PUT", exam);-->
+<!--        if (putresponce == "0") {-->
+<!--          iziToast.success({-->
+<!--            title: 'Update Successfully...!',-->
+<!--          });-->
+<!--          generateFinishedExam();-->
+<!--        } else {-->
+<!--          iziToast.error({-->
+<!--            title: 'Error Not Successfully Update...' + putresponce,-->
+<!--            position: 'topRight',-->
+<!--            //message: 'Not Successfully inserted \n' + serverResponce,-->
+<!--          });-->
+<!--        }-->
+<!--      }-->
+
+<!--      button.innerText = "Finished";-->
+<!--      button.className = "btn btn-primary";-->
+<!--      buttonTD.appendChild(button);-->
+<!--      tr.appendChild(buttonTD);-->
+
+
+<!--      tableBody.appendChild(tr);-->
+<!--    }-->
+
+<!--  }-->
+
+<!-- function refreshProfileEditForm(){-->
+<!--   logedUser = httpServiceRequest("changeuser/loggeduser");-->
+<!--   oldlogeUser = null;-->
+
+<!--   txtUserName.value= logedUser.username;-->
+<!--   txtEmail.value = logedUser.email;-->
+
+
+
+
+
+
+
+<!-- }-->
+
+<!-- function submitProfileSettings(){-->
+
+<!--         let putresponse = httpServiceRequest("/changeuser","PUT",logedUser)-->
+<!--         if(putresponse =="Ok"){-->
+<!--           window.alert("User profile change successfully..!");-->
+<!--          window.location.replace("/logout");-->
+<!--         } else {-->
+<!--           window.alert("Update not succefully..!"+putresponse);-->
+<!--         }-->
+
+
+<!-- }-->
+
+
+
+
+<!--</script>-->
+
+
+
+</body>
+
+</html>

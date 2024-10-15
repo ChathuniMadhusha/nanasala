@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Components / Accordion - NiceAdmin Bootstrap Template</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link rel="stylesheet" href="assets/Libraries/fontawesom/css/all.css">
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/select2/css/select2.min.css">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+
+  <script src="assets/Libraries/jQuery/jQuery.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
+
+  <script type="text/javascript" charset="utf8"
+    src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
+
+
+  <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+  <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+
+  <link rel="stylesheet" href="assets/select2/bootstrap-5-theme/select2-bootstrap-5-theme.min.css">
+  <link rel="stylesheet" href="assets/select2/bootstrap-5-theme/select2-bootstrap-5-theme.rtl.min.css">
+
+  <script src="assets/select2/js/select2.full.min.js"></script>
+
+  <link rel="stylesheet" href="assets/css/Exam_Define.css">
+  <script src="assets/js/Exam_Define.js"></script>
+  <script src="assets/Libraries/script/common.js"></script>
+  <script src="assets/Libraries/script/loging.js"></script>
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet ">
+  <!--bs min js-->
+   <script src="assets/Libraries/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!--sweet alert-->
+  <script src="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.css">
+
+
+  <link rel="stylesheet" href="assets/iziToast/css/iziToast.min.css">
+  <script src="assets/iziToast/js/iziToast.min.js"></script>
+
+</head>
+
+<body>
+
+<!-- ======= Header ======= -->
+<header id="header" class="header fixed-top d-flex align-items-center">
+
+  <div class="d-flex align-items-center justify-content-between">
+<!--    <a href="index.html" class="logo d-flex align-items-center">-->
+
+<!--      <span class="d-none d-lg-block" style="color: black">Nanasala ICT Center, Gampaha</span>-->
+<!--    </a>-->
+    <img src="onlynanasala.png" height="120" width="150">
+    <i class="bi bi-list toggle-sidebar-btn" style="color: black">
+
+    </i>
+  </div><!-- End Logo -->
+
+  <div class="search-bar">
+    <form class="search-form d-flex align-items-center" method="POST" action="#">
+      <input type="text" name="query" placeholder="Search" title="Enter search keyword">
+      <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+    </form>
+  </div><!-- End Search Bar -->
+
+  <nav class="header-nav ms-auto">
+    <ul class="d-flex align-items-center">
+
+      <li class="nav-item d-block d-lg-none">
+        <a class="nav-link nav-icon search-bar-toggle " href="#">
+          <i class="bi bi-search"></i>
+        </a>
+      </li><!-- End Search Icon-->
+
+
+      <li class="nav-item dropdown pe-3">
+
+        <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+          <img id="imgLoggedUser"  class="rounded-circle">
+          <span id="spmLoggedUser" class="d-none d-md-block dropdown-toggle ps-2"></span>
+        </a><!-- End Profile Iamge Icon -->
+
+        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+          <li class="dropdown-header">
+            <h6 id="UserName"></h6>
+            <span id="spnUserRole"></span>
+          </li>
+          <li>
+            <hr class="dropdown-divider">
+          </li>
+
+          <li>
+            <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+              <i class="bi bi-person"></i>
+              <span>My Profile</span>
+            </a>
+          </li>
+          <li>
+            <hr class="dropdown-divider">
+          </li>
+
+          <li>
+            <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+              <i class="bi bi-gear"></i>
+              <span>Account Settings</span>
+            </a>
+          </li>
+          <li>
+            <hr class="dropdown-divider">
+          </li>
+
+          <li>
+            <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
+              <i class="bi bi-question-circle"></i>
+              <span>Need Help?</span>
+            </a>
+          </li>
+          <li>
+            <hr class="dropdown-divider">
+          </li>
+
+          <li>
+            <a class="dropdown-item d-flex align-items-center" href="#" onclick="logoutMC()">
+              <i class="bi bi-box-arrow-right"></i>
+              <span>Sign Out</span>
+            </a>
+          </li>
+
+        </ul><!-- End Profile Dropdown Items -->
+      </li><!-- End Profile Nav -->
+
+    </ul>
+  </nav><!-- End Icons Navigation -->
+
+</header><!-- End Header -->
+<!--start-->
+<aside id="sidebar" class="sidebar">
+
+  <ul class="sidebar-nav" id="sidebar-nav" >
+
+    <li class="nav-item" >
+      <a class="nav-link collapsed" href="/dashboard" >
+        <i class="fa-solid fa-house " style="color: black"></i>
+        <span style="color: black"><b>HOME</b></span>
+      </a>
+    </li><!-- End Dashboard Nav -->
+
+
+    <li class="nav-item">
+      <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#" >
+        <i class="fa-solid fa-sliders" style="color: black"></i><span style="color: black">Administration</span><i
+              class="fa-solid fa-caret-down ms-auto"></i>
+      </a>
+      <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <li id="MANAGE_USER_DETAILS" >
+          <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="" href="/user">
+            <i  class="fa-solid fa-star" style="color: black"></i><span
+                  style="color: black"  >User</span>
+          </a>
+        </li>
+        <li id="MANAGE_EMPLOYEE_DETAILS">
+          <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="" href="/employee">
+            <i  class="fa-solid fa-star" style="color:black"></i><span
+                  style="color: black" >Employee</span>
+          </a>
+        </li>
+        <li id="MANAGE_PRIVILAGE">
+          <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="" href="/privilage">
+            <i  class="fa-solid fa-star" style="color: black"></i><span
+                  style="color: black" >Privilege</span>
+          </a>
+        </li>
+      </ul>
+    </li><!-- End Components Nav -->
+
+    <li id="STUDENT_DETAILS" class="nav-item">
+      <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="" href="/student">
+        <i  class="fa-sharp fa-solid fa-children" style="color: black"></i>
+        <span style="color: black" >Add Student</span>
+      </a>
+    </li><!-- End Forms Nav -->
+
+
+    <li id="STUDENT_BATCH_REGISTRTAION" class="nav-item">
+      <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="" href="/stubatchreg">
+        <i  class="fa-regular fa-id-card" style="color: black"></i>
+        <span style="color: black" >Batch Registration</span>
+      </a>
+    </li>
+
+    <li id="COURSE_PAYMENT" class="nav-item">
+      <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="" href="/coursepayment">
+        <i  class="fa-sharp fa-solid fa-money-bill" style="color: black"></i>
+        <span style="color: black"
+        >Student Payments</span>
+      </a>
+    </li>
+
+
+
+    <li class="nav-item">
+      <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="" href="/attendance">
+        <i  class="fa-solid fa-check-to-slot" style="color: black"></i><span style="color: black" id="ATTENDANCE_MANAGEMENT"
+      >Student Attendance</span>
+      </a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">
+        <i class="fa-brands fa-discourse" style="color: black"></i><span style="color: black"
+      >Course Implementations</span><i
+              class="fa-solid fa-caret-down ms-auto"></i>
+      </a>
+      <ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <li id="COURSE_IMPLEMENTATION">
+          <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="" href="/course">
+            <i  class="fa-solid fa-star" style="color: black"></i><span style="color: black"
+          >Implement Course</span>
+          </a>
+        </li>
+        <li id="STUDENT_BATCH_IMPLEMENTATION">
+          <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="" href="/batch">
+            <i  class="fa-solid fa-star" style="color: black"></i><span style="color: black"
+          >Implement Batch</span>
+          </a>
+        </li>
+      </ul>
+    </li><!-- End Icons Nav -->
+
+
+    <li class="nav-item">
+      <a class="nav-link collapsed" data-bs-target="#chartss-nav" data-bs-toggle="collapse" href="#" >
+        <i class="fa-solid fa-sliders" style="color: black"></i><span style="color: black">Exam</span><i
+              class="fa-solid fa-caret-down ms-auto"></i>
+      </a>
+      <ul id="chartss-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <li id="MANAGE_EXAM" >
+          <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="" href="/exam">
+            <i  class="fa-solid fa-star" style="color: black"></i><span
+                  style="color: black"  >Define Exam</span>
+          </a>
+        </li>
+        <li id="MANAGE_EXAM_APPLICATION">
+          <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="" href="/exam_application">
+            <i  class="fa-solid fa-star" style="color:black"></i><span
+                  style="color: black" >Exam Application</span>
+          </a>
+        </li>
+        <li id="MANAGE_EXAM_RESULT">
+          <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="" href="/exam_result">
+            <i  class="fa-solid fa-star" style="color: black"></i><span
+                  style="color: black" >Exam Result</span>
+          </a>
+        </li>
+      </ul>
+    </li><!-- End Components Nav -->
+
+
+
+
+    <!-- <li class="nav-item">
+         <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
+             <i class="fa-solid fa-landmark" style="color: black"></i><span style="color: black"
+         >Lecture Hall</span><i
+                 class="fa-solid fa-caret-down ms-auto"></i>
+         </a>
+         <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+             <li id="LECTURE_HALL_MANAGEMENT">
+                 <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="" href="/lecturehall">
+                     <i  class="fa-solid fa-star" style="color: black"></i><span style="color: black"
+                 >Lecture Hall Management</span>
+                 </a>
+             </li>
+             <li id="SESSION_MANAGEMENT">
+                 <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="" href="/session">
+                     <i  class="fa-solid fa-star" style="color: black"></i><span style="color: black"
+                 >Session Management</span>
+                 </a>
+             </li>
+         </ul>
+     </li>--><!-- End Charts Nav -->
+
+    <li class="nav-item">
+      <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
+        <i class="fa-solid fa-face-grin-beam-sweat" style="color: black"></i><span style="color: black"
+      >Reports</span><i
+              class="fa-solid fa-caret-down ms-auto"></i>
+      </a>
+      <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <li>
+          <a  href="/dailypaymenttbl">
+            <i class="fa-solid fa-star" style="color: black"></i><span style="color: black"
+          >Daily Payments</span>
+          </a>
+        </li>
+        <li>
+          <a href="/arrearsreport">
+            <i class="fa-solid fa-star" style="color: black"></i><span style="color: black"
+                                                                       style="color: white;">Arrears Report</span>
+          </a>
+        </li>
+        <li>
+          <a  href="/batchreport">
+            <i class="fa-solid fa-star" style="color: black"></i><span style="color: black"
+          >Batch Report</span>
+          </a>
+        </li>
+        <li>
+          <a  href="/batchcount">
+            <i class="fa-solid fa-star" style="color: black"></i><span style="color: black"
+          >Batch Count Report</span>
+          </a>
+        </li>
+        <li>
+          <a  href="/attendancebydate">
+            <i class="fa-solid fa-star" style="color: black"></i><span style="color: black"
+          >Batch Count Report</span>
+          </a>
+        </li>
+        <li>
+          <a  href="/finalresultreport">
+            <i class="fa-solid fa-star" style="color: black"></i><span style="color: black"
+          >Result Report</span>
+          </a>
+        </li>
+      </ul>
+    </li><!-- End Tables Nav -->
+
+
+    <li class="nav-item">
+      <a class="nav-link collapsed" onclick="logoutMC()">
+        <i class="fa-solid fa-right-to-bracket icon" style="color: black"></i>
+        <span style="color: black">Logout</span>
+      </a>
+    </li><!-- End Login Page Nav -->
+
+
+  </ul>
+
+</aside><!-- End Sidebar-->
+
+
+
+  <main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1><b>
+          <p>
+          <h1 style="color: #ff6a1b; font-family: 'Times New Roman', Times, serif; font-size: 40px;">&nbsp<i class="fa-solid fa-book-open"></i><b>&nbspDefine Exam</b></h1>
+          </p>
+        </b></h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item">Administration</li>
+          <li class="breadcrumb-item active">Course</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+      <div class="row">
+        <div class="col-12">
+          <div class="card" id="cr"
+            style="border-radius: 40px; border-color:#0b6a6a;  border-width: 6px; padding-top: 30px; ">
+            <div class="card-body">
+              <!--tabs  ###########################################################################-->
+              <ul class="nav nav-tabs">
+                <li class="nav-item">
+                  <a class="nav-link active" id="navLinkForm" onclick="changeTab('form')" href="#"
+                    style="color: #114a65;"><b style="color:#114a65 ;">Exam Define
+                      Form</b></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id="navLinkTable" onclick="changeTab('table')" href="#" style="color: #114a65;"><b
+                      style="color:#114a65 ;">Exam Define</b></a>
+                </li>
+              </ul>
+
+
+
+
+              <!--form area #################################################################################-->
+
+              <div id="divForm" style="display:block; margin-top: 10px;"><br>
+
+                <!--################## Rquest ########################################-->
+
+                <!--#################################Class Catogary##########################################3-->
+                <div class="row">
+
+                  <div class="col-4">
+                    <div class="mb-3">
+                      <label for="cmbCourseCatogary" class="form-label">
+                        <h6><b>&nbsp&nbspCourse Catogary : <b><span style="color: red;"><sup>(Required)</sup></span>
+                        </b></b></h6>
+                      </label>
+                      <div class="input-group">
+
+                        <select id="cmbCourseCatogary" class="form-select js-example-basic-single formcontrol" required data-bs-toggle="tooltip" data-bs-placement="top"
+                                title="Select Class Catogary"
+                                onchange="selectBinder(cmbCourseCatogary,'','examdefine','course_id','oldexamdefine');getCourseListAccordingtoCourseCat(); getExamName();"></select>
+                        <div class="valid-feedback" style="border-radius: 20px;">
+                          <b>Course Catogary is Looks good :)</b>
+                        </div>
+                        <div class="invalid-feedback">
+                          <b>Please Enter Course Catogary :(</b>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="col-4">
+                    <div class="mb-3">
+                      <label for="cmbCourseName" class="form-label">
+                        <h6><b>&nbsp&nbspCourse Name : <b><span style="color: red;"><sup>(Required)</sup></span>
+                        </b></b></h6>
+                      </label>
+                      <div class="input-group">
+
+                        <select id="cmbCourseName" class="form-select formcontrol" required data-bs-toggle="tooltip" data-bs-placement="top"
+                                title="Select Class Catogary"
+                                onchange="selectBinder(cmbCourseName,'','examdefine','course_id','oldexamdefine'); getExamName(); getBatchDetails(); getApplicationDeadline(); getExamTypeList();"></select>
+                        <div class="valid-feedback" style="border-radius: 20px;">
+                          <b>Course Name is Looks good :)</b>
+                        </div>
+                        <div class="invalid-feedback">
+                          <b>Please Enter Course Name :(</b>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="col-4">
+                    <div class="mb-3">
+                      <label for="cmbAAcadamicYear" class="form-label">
+                        <h6><b>&nbsp&nbspAcadamic Year : <b><span style="color: red;"><sup>(Required)</sup></span>
+                        </b></b></h6>
+                      </label>
+                      <div class="input-group">
+
+                        <select id="cmbAAcadamicYear" class="form-select js-example-basic-single formcontrol" required data-bs-toggle="tooltip" data-bs-placement="top"
+                                title="Select Class Catogary"
+                                onchange="selectBinder(cmbAAcadamicYear,'','examdefine','acadamic_year_id','oldexamdefine'); getExamName(); getExamNumberList();"></select>
+                        <div class="valid-feedback" style="border-radius: 20px;">
+                          <b>Acadamic Year is Looks good :)</b>
+                        </div>
+                        <div class="invalid-feedback">
+                          <b>Please Enter Acadamic Year :(</b>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+                <div class="row">
+                  <div class="col-4">
+                    <div id="divTableBatch"
+                         style=" margin-top: 30px; margin-right:30px ; margin-left: 30px;">
+                      <div class="row mt-2">
+                        <table class="table"
+                               style="color: #114a65; font-style: normal; font-family: Arial, Helvetica, sans-serif; " id="tblBatch">
+                          <thead>
+                          <tr>
+                            <th
+                                    style="background-color: #ff6a1b; color: black; border-bottom-left-radius: 10px; border-top-left-radius: 10px;">
+                              #
+                            </th>
+                            <th style="background-color: #ff6a1b; color: black; ">Batch name</th>
+                            <th
+                                    style="background-color: #ff6a1b;color: black; border-bottom-right-radius: 10px; border-top-right-radius:10px ;">
+                              End date
+                            </th>
+                          </tr>
+                          </thead>
+                          <tbody></tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="row">
+                  <div class="col-4">
+                    <div class="mb-3">
+                      <label for="cmbExamNumber" class="form-label">
+                        <h6><b>&nbsp&nbspExam Number : <b><span style="color: red;"><sup>(Required)</sup></span>
+                        </b></b></h6>
+                      </label>
+                      <div class="input-group">
+
+                        <select id="cmbExamNumber" class="form-select js-example-basic-single formcontrol" required data-bs-toggle="tooltip" data-bs-placement="top"
+                                title="Select Class Catogary"
+                                onchange="selectBinder(cmbExamNumber,'','examdefine','exam_number_id','oldexamdefine');  getExamName();"></select>
+                        <div class="valid-feedback" style="border-radius: 20px;">
+                          <b>Exam Number is Looks good :)</b>
+                        </div>
+                        <div class="invalid-feedback">
+                          <b>Please Enter Exam Number :(</b>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-4">
+                    <div class="mb-3">
+                      <label for="examName" class="form-label">
+                        <h6><b>&nbsp&nbspExam Name :
+                        </b></b></h6>
+                      </label>
+
+                      <input type="text" class="form-control-plaintext formcontrol" id="examName" disabled>
+
+                    </div>
+                  </div>
+
+                  <div class="col-4">
+                    <div class="mb-3">
+                      <label for="dteExamApplicationDeadlines" class="form-label">
+                        <h6><b>&nbsp&nbspExam Application Deadline : <b><span
+                                style="color: red;"><sup>(Required)</sup></span>
+                        </b></b>
+                        </h6>
+                      </label>
+                      <div class="input-group">
+
+                        <input type="date" class="form-control formcontrol" id="dteExamApplicationDeadlines"
+                               data-bs-toggle="tooltip" data-bs-placement="top"
+                               title="Ex: mm/dd/yyyy" required
+                               onchange="textFieldValidator(dteExamApplicationDeadlines,'','examdefine','exam_application_deadline','oldexamdefine'); getExamDate();">
+                      </div>
+                    </div>
+                  </div>
+
+
+                </div>
+
+
+                <div class="row">
+                  <div class="col-12">
+                    <div class="mb-3">
+                      <h4><b>Exam Type:</b></h4>
+                    </div>
+                  </div>
+                </div>
+
+
+
+
+<!--<div class="row">-->
+<!--  <div class="col-3">-->
+<!--  <div class="mb-3">-->
+<!--      <div class="form-check">-->
+<!--        <input class="form-check-input" type="checkbox" value="" id="chkAssignment">-->
+<!--        <label class="form-check-label" for="chkAssignment">-->
+<!--          Assignment-->
+<!--        </label>-->
+<!--      </div>-->
+<!--  </div>-->
+<!--  </div>-->
+<!--  <div class="col-3">-->
+<!--    <label class="form-check-label" for="dteAssiDate">-->
+<!--      Assignment Exam Date-->
+<!--    </label>-->
+<!--    <input type="date" class="form-control formcontrol" id="dteAssiDate"-->
+<!--               data-bs-toggle="tooltip" data-bs-placement="top"-->
+<!--               title="Create Course Code" placeholder="Exam Date"-->
+<!--               onchange="dateFieldValidator(dteAssiDate,'','session','session_date','oldsession') ">-->
+<!--  </div>-->
+<!--  <div class="col-3">-->
+<!--    <label class="form-check-label" for="tmeAssiStartTime">-->
+<!--      Assignment Start Time-->
+<!--    </label>-->
+<!--        <input type="time" class="form-control formcontrol" id="tmeAssiStartTime"-->
+<!--               data-bs-toggle="tooltip" data-bs-placement="top"-->
+<!--               title="Create Course Code"-->
+<!--               onchange="dateFieldValidator(tmeAssiStartTime,'','session','start_time','oldsession')" >-->
+<!--  </div>-->
+<!--  <div class="col-3">-->
+<!--    <label class="form-check-label" for="tmeAssiEndTime">-->
+<!--      Assignment End Time-->
+<!--    </label>-->
+<!--    <input type="time" class="form-control formcontrol" id="tmeAssiEndTime"-->
+<!--           data-bs-toggle="tooltip" data-bs-placement="top"-->
+<!--           title="Create Course Code"-->
+<!--           onchange="dateFieldValidator(tmeEndTime,'','session','start_time','oldsession')" >-->
+<!--  </div>-->
+<!--</div>-->
+<!--                <div class="row">-->
+<!--                  <div class="col-3">-->
+<!--                    <div class="mb-3">-->
+<!--                        <div class="form-check">-->
+<!--                          <input class="form-check-input" type="checkbox" value="" id="chkPresentation">-->
+<!--                          <label class="form-check-label" for="chkPresentation">-->
+<!--                            Presentation-->
+<!--                          </label>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                  </div>-->
+<!--                  <div class="col-3">-->
+<!--                    <label class="form-check-label" for="dtePreDate">-->
+<!--                      Presentation Exam Date-->
+<!--                    </label>-->
+<!--                    <input type="date" class="form-control formcontrol" id="dtePreDate"-->
+<!--                           data-bs-toggle="tooltip" data-bs-placement="top"-->
+<!--                           title="Create Course Code"-->
+<!--                           onchange="dateFieldValidator(dtePreDate,'','session','session_date','oldsession') ">-->
+<!--                  </div>-->
+<!--                  <div class="col-3">-->
+<!--                    <label class="form-check-label" for="tmePreStartTime">-->
+<!--                      Presentation Start Time-->
+<!--                    </label>-->
+<!--                    <input type="time" class="form-control formcontrol" id="tmePreStartTime"-->
+<!--                           data-bs-toggle="tooltip" data-bs-placement="top"-->
+<!--                           title="Create Course Code"-->
+<!--                           onchange="dateFieldValidator(tmePreStartTime,'','session','start_time','oldsession')" >-->
+<!--                  </div>-->
+<!--                  <div class="col-3">-->
+<!--                    <label class="form-check-label" for="tmePreEndTime">-->
+<!--                      Presentation End Time-->
+<!--                    </label>-->
+<!--                    <input type="time" class="form-control formcontrol" id="tmePreEndTime"-->
+<!--                           data-bs-toggle="tooltip" data-bs-placement="top"-->
+<!--                           title="Create Course Code"-->
+<!--                           onchange="dateFieldValidator(tmePreEndTime,'','session','start_time','oldsession')" >-->
+<!--                  </div>-->
+<!--                </div>-->
+
+<!--                <div class="row">-->
+<!--                  <div class="col-3">-->
+<!--                    <div class="mb-3">-->
+<!--                      <div class="form-check">-->
+<!--                        <input class="form-check-input" type="checkbox" value="" id="chkMcq">-->
+<!--                        <label class="form-check-label" for="chkMcq">-->
+<!--                          MCQ-->
+<!--                        </label>-->
+<!--                      </div>-->
+<!--                    </div>-->
+<!--                  </div>-->
+<!--                  <div class="col-3">-->
+<!--                    <label class="form-check-label" for="dteMcqDate">-->
+<!--                      MCQ Exam Date-->
+<!--                    </label>-->
+<!--                    <input type="date" class="form-control formcontrol" id="dteMcqDate"-->
+<!--                           data-bs-toggle="tooltip" data-bs-placement="top"-->
+<!--                           title="Create Course Code"-->
+<!--                           onchange="dateFieldValidator(dteMcqDate,'','session','session_date','oldsession') ">-->
+<!--                  </div>-->
+<!--                  <div class="col-3">-->
+<!--                    <label class="form-check-label" for="tmeMcqStartTime">-->
+<!--                      MCQ Start Time-->
+<!--                    </label>-->
+<!--                    <input type="time" class="form-control formcontrol" id="tmeMcqStartTime"-->
+<!--                           data-bs-toggle="tooltip" data-bs-placement="top"-->
+<!--                           title="Create Course Code"-->
+<!--                           onchange="dateFieldValidator(tmeMcqStartTime,'','session','start_time','oldsession')" >-->
+<!--                  </div>-->
+<!--                  <div class="col-3">-->
+<!--                    <label class="form-check-label" for="tmeMcqEndTime">-->
+<!--                      MCQ End Time-->
+<!--                    </label>-->
+<!--                    <input type="time" class="form-control formcontrol" id="tmeMcqEndTime"-->
+<!--                           data-bs-toggle="tooltip" data-bs-placement="top"-->
+<!--                           title="Create Course Code"-->
+<!--                           onchange="dateFieldValidator(tmeMcqEndTime,'','session','start_time','oldsession')" >-->
+<!--                  </div>-->
+<!--                </div>-->
+
+
+<!--                <div class="row">-->
+<!--                  <div class="col-3">-->
+<!--                    <div class="mb-3">-->
+<!--                      <div class="form-check">-->
+<!--                        <input class="form-check-input" type="checkbox" value="" id="chkPractical">-->
+<!--                        <label class="form-check-label" for="chkPractical">-->
+<!--                          Practical-->
+<!--                        </label>-->
+<!--                      </div>-->
+<!--                    </div>-->
+<!--                  </div>-->
+<!--                  <div class="col-3">-->
+<!--                    <label class="form-check-label" for="dtePracDate">-->
+<!--                      Practical Exam Date-->
+<!--                    </label>-->
+<!--                    <input type="date" class="form-control formcontrol" id="dtePracDate"-->
+<!--                           data-bs-toggle="tooltip" data-bs-placement="top"-->
+<!--                           title="Create Course Code"-->
+<!--                           onchange="dateFieldValidator(dtePracDate,'','session','session_date','oldsession') ">-->
+<!--                  </div>-->
+<!--                  <div class="col-3">-->
+<!--                    <label class="form-check-label" for="tmePracStartTime">-->
+<!--                      Practical Start Time-->
+<!--                    </label>-->
+<!--                    <input type="time" class="form-control formcontrol" id="tmePracStartTime"-->
+<!--                           data-bs-toggle="tooltip" data-bs-placement="top"-->
+<!--                           title="Create Course Code"-->
+<!--                           onchange="dateFieldValidator(tmePracStartTime,'','session','start_time','oldsession')" >-->
+<!--                  </div>-->
+<!--                  <div class="col-3">-->
+<!--                    <label class="form-check-label" for="tmePracEndTime">-->
+<!--                      Practical End Time-->
+<!--                    </label>-->
+<!--                    <input type="time" class="form-control formcontrol" id="tmePracEndTime"-->
+<!--                           data-bs-toggle="tooltip" data-bs-placement="top"-->
+<!--                           title="Create Course Code"-->
+<!--                           onchange="dateFieldValidator(tmePracEndTime,'','session','start_time','oldsession')" >-->
+<!--                  </div>-->
+<!--                </div>-->
+
+
+
+
+
+
+<!--                                    #####################################Class Type##################################3-->
+                <div class="row">
+                  <div class="col-6">
+                    <div class="mb-3">
+                      <label for="cmbType" class="form-label">
+                        <h6><b>&nbsp&nbspExam type : <b><span
+                                style="color: red;"><sup>(Required)</sup></span>
+                        </b></b>
+                        </h6>
+                      </label>
+                      <div class="input-group">
+
+                        <select id="cmbType" class="form-select formcontrol" required
+                                data-bs-toggle="tooltip" data-bs-placement="top"
+                                title="Ex: Select District"
+                                onchange="selectBinder(cmbType,'','examtype','exam_type_id','oldexamtype')"></select>
+                        <div class="valid-feedback" style="border-radius: 20px;">
+                          <b>Feature Looks good :)</b>
+                        </div>
+                        <div class="invalid-feedback">
+                          <b>Please Enter Feature :(</b>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="mb-3">
+                      <label for="dteExamDate" class="form-label">
+                        <h6><b>&nbsp&nbspExam Date : <b><span
+                                style="color: red;"><sup>(Required)</sup></span>
+                        </b></b>
+                        </h6>
+                      </label>
+                      <div class="input-group">
+
+                        <input type="date" class="form-control formcontrol" id="dteExamDate"
+                               data-bs-toggle="tooltip" data-bs-placement="top"
+                               title="Ex: mm/dd/yyyy" required
+                               onchange="textFieldValidator(dteExamDate,'','examtype','exam_date','oldexamtype');">
+                      </div>
+                      <!--<div id="result" class="form-text"></div>-->
+                    </div>
+                  </div>
+                </div>
+
+<!--                #####################################Course code########################################-->
+                <div class="row">
+                  <div class="col-6">
+                    <div class="mb-3">
+                      <label for="tmeStartTime" class="form-label">
+                        <h6><b>&nbsp&nbspStart Time : <b><span style="color: red;"><sup>(Required)</sup></span></b></b>
+                        </h6>
+                      </label>
+                      <div class="input-group">
+
+                        <input type="time" class="form-control formcontrol" id="tmeStartTime"
+                               onchange="textFieldValidator(tmeStartTime,'','examtype','start_time','oldexamtype');">
+                        <div class="valid-feedback" style="border-radius: 20px;">
+                          <b>Start time is Looks good :)</b>
+                        </div>
+                        <div class="invalid-feedback">
+                          <b>Please Enter Valid Start time :(</b>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-6">
+                    <div class="mb-3">
+                      <label for="tmeEndTime" class="form-label">
+                        <h6><b>&nbsp&nbspEnd Time : <b><span style="color: red;"><sup>(Required)</sup></span></b></b>
+                        </h6>
+                      </label>
+                      <div class="input-group">
+
+                        <input type="time" class="form-control formcontrol" id="tmeEndTime"
+                               onchange="textFieldValidator(tmeEndTime,'','examtype','end_time','oldexamtype')">
+                        <div class="valid-feedback" style="border-radius: 20px;">
+                          <b>End Time is Looks good :)</b>
+                        </div>
+                        <div class="invalid-feedback">
+                          <b>Please Enter Valid End Time :(</b>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <button class="btn btn-outline-success" onclick="btnAddInnFormMC()" id="btnAddInnForm"><b><i
+                        class="fa-solid fa-pen-to-square"></i>
+                  &nbsp&nbspAdd Exam</b></button>
+
+                <button class="btn btn-outline-warning" onclick="btnUpdateInnFormMC()" id="btnUpdateInnForm"><b><i class="fa-solid fa-up-right-from-square"></i>
+                  &nbsp&nbspUpdate Exam</b></button>
+
+
+                <div id="divTableInner"
+                     style=" margin-top: 30px; margin-right:30px ; margin-left: 30px;">
+                  <div class="row mt-2">
+                    <table class="table"
+                           style="color: #114a65; font-style: normal; font-family: Arial, Helvetica, sans-serif; " id="tblExamType">
+                      <thead>
+                      <tr>
+                        <th
+                                style="background-color: #ff6a1b; color: black; border-bottom-left-radius: 10px; border-top-left-radius: 10px;">
+                          #
+                        </th>
+                        <th style="background-color: #ff6a1b; color: black; ">Exam type</th>
+                        <th style="background-color: #ff6a1b; color: black; ">Date</th>
+                        <th style="background-color: #ff6a1b; color: black; ">Start Time</th>
+                        <th style="background-color: #ff6a1b; color: black; ">End Time</th>
+                        <th
+                                style="background-color: #ff6a1b;color: black; border-bottom-right-radius: 10px; border-top-right-radius:10px ;">
+                          Modify
+                        </th>
+                      </tr>
+                      </thead>
+                      <tbody></tbody>
+                    </table>
+                  </div>
+                </div>
+
+
+                <br><br>
+
+                <div class="row">
+
+                  <div class="col-6">
+                    <div class="mb-3">
+                      <label for="dteAddedDate" class="form-label">
+                        <h6><b>&nbsp&nbspAdded date : <b><span
+                                style="color: red;"><sup>(Required)</sup></span>
+                        </b></b>
+                        </h6>
+                      </label>
+
+                      <input type="text" class="form-control-plaintext formcontrol"
+                             id="dteAddedDate">
+
+                    </div>
+                  </div>
+
+                  <div class="col-6">
+                    <div class="mb-3">
+                      <label for="cmbExamStatus" class="form-label">
+                        <h6><b>&nbsp&nbspStatus : <b><span
+                                style="color: red;"><sup>(Required)</sup></span>
+                        </b></b>
+                        </h6>
+                      </label>
+                      <div class="input-group">
+
+                        <select id="cmbExamStatus" class="form-select formcontrol" required
+                                data-bs-toggle="tooltip" data-bs-placement="top"
+                                title="Ex: Select Status"
+                                onchange="selectBinder(cmbExamStatus,'','examdefine','exam_status','oldexamdefine')"></select>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+
+                <div class="row">
+                  <div class="col-4">
+                    <button class="btn btn-outline-danger" id="btnClearClassDetails"><b><i class="fa-regular fa-trash-can" ></i> &nbsp&nbspClear
+                      Exam</b></button>
+                  </div>
+                  <div class="col-6">
+                    <button class="btn btn-outline-success" type="submit" onclick="btnAddMC()" id="btnAddCourse"><b><i
+                          class="fa-solid fa-arrow-up-from-bracket"></i> &nbsp&nbspAdd
+                        Exam</b></button>&nbsp&nbsp
+                    <button class="btn btn-outline-warning" id="btnUpdate" onclick="btnUpdateMC()"><b><i
+                          class="fa-solid fa-pen-to-square"></i> &nbsp&nbspUpdate
+                        Exam</b></button>&nbsp&nbsp
+
+                  </div>
+                </div>
+              </div>
+              </form>
+
+
+              <!--Table area ###########################################################################-->
+
+              <div id="divTable" style="display: none; margin-top: 30px; margin-right:30px ; margin-left: 30px;">
+
+                <div class="row mt-2">
+                  <div class="col-4">
+                  </div>
+                  <div class="col-4">
+                    <div class="row">
+                      <div class="col-4">
+                        <button class="rounded-circle" style="border-width: 5px" disabled id="btnEdit" onclick="formRefill('editob');"><i
+                                class="fa-solid fa-pen-to-square"></i></button>
+                      </div>
+                      <div class="col-4">
+                        <button class="rounded-circle" style="border-width: 5px" disabled id="btnDelete" onclick="rowDelete('editob');"><i class="fa-solid fa-trash"></i></button>
+                      </div>
+
+                      <div class="col-4">
+                        <button class="rounded-circle" style="border-width: 5px" disabled id="btnView" onclick="rowView('editob')"><i class="fa-sharp fa-solid fa-eye"></i></button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-4">
+                  </div>
+                </div>
+
+
+
+                <div class="row mt-2">
+                  <table class="table"
+                    style="color: #114a65; font-style: normal; font-family: Arial, Helvetica, sans-serif; "
+                    id="tblExam">
+                    <thead>
+                      <tr>
+                        <th
+                          style="background-color: #ff6a1b; color: black; border-bottom-left-radius: 10px; border-top-left-radius: 10px;">
+                          </th>
+                        <th style="background-color: #ff6a1b; color: black; ">
+                          #</th>
+                        <th style="background-color: #ff6a1b; color: black; ">Acadamic Year</th>
+                        <th style="background-color: #ff6a1b; color: black; ">Course name</th>
+                        <th style="background-color: #ff6a1b; color: black; ">Exam name</th>
+                        <th
+                                style="background-color: #ff6a1b;color: black; border-bottom-right-radius: 10px; border-top-right-radius:10px ;">Status</th>
+                    </thead>
+                    <tbody></tbody>
+                  </table>
+                </div>
+
+              </div>
+
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+    <!-- <div id="err">
+
+    </div>-->
+  </main><!-- End #main -->
+
+
+
+
+
+
+</body>
+
+</html>

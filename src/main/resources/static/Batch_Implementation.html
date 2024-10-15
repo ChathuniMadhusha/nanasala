@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Components / Accordion - NiceAdmin Bootstrap Template</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link rel="stylesheet" href="assets/Libraries/fontawesom/css/all.css">
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet">
+
+
+    <script src="assets/Libraries/jQuery/jQuery.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
+
+    <script type="text/javascript" charset="utf8"
+            src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
+
+
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+
+    <link rel="stylesheet" href="assets/css/Batch_Implementation.css">
+    <script src="assets/js/Batch_Implementation.js"></script>
+    <script src="assets/Libraries/script/common.js"></script>
+    <script src="assets/Libraries/script/loging.js"></script>
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet ">
+    <!--bs min js-->
+     <script src="assets/Libraries/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!--sweet alert-->
+    <script src="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.css">
+
+
+    <link rel="stylesheet" href="assets/iziToast/css/iziToast.min.css">
+    <script src="assets/iziToast/js/iziToast.min.js"></script>
+
+</head>
+
+<body>
+
+<!-- ======= Header ======= -->
+<header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="d-flex align-items-center justify-content-between">
+<!--        <a href="index.html" class="logo d-flex align-items-center">-->
+
+<!--            <span class="d-none d-lg-block" style="color: black">Nanasala ICT Center, Gampaha</span>-->
+<!--        </a>-->
+        <img src="onlynanasala.png" height="120" width="150">
+        <i class="bi bi-list toggle-sidebar-btn" style="color: black">
+
+        </i>
+    </div><!-- End Logo -->
+
+    <div class="search-bar">
+        <form class="search-form d-flex align-items-center" method="POST" action="#">
+            <input type="text" name="query" placeholder="Search" title="Enter search keyword">
+            <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+        </form>
+    </div><!-- End Search Bar -->
+
+    <nav class="header-nav ms-auto">
+        <ul class="d-flex align-items-center">
+
+            <li class="nav-item d-block d-lg-none">
+                <a class="nav-link nav-icon search-bar-toggle " href="#">
+                    <i class="bi bi-search"></i>
+                </a>
+            </li><!-- End Search Icon-->
+
+
+            <li class="nav-item dropdown pe-3">
+
+                <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+                    <img id="imgLoggedUser"  class="rounded-circle">
+                    <span id="spmLoggedUser" class="d-none d-md-block dropdown-toggle ps-2"></span>
+                </a><!-- End Profile Iamge Icon -->
+
+                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+                    <li class="dropdown-header">
+                        <h6 id="UserName"></h6>
+                        <span id="spnUserRole"></span>
+                    </li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+
+                    <li>
+                        <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                            <i class="bi bi-person"></i>
+                            <span>My Profile</span>
+                        </a>
+                    </li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+
+                    <li>
+                        <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                            <i class="bi bi-gear"></i>
+                            <span>Account Settings</span>
+                        </a>
+                    </li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+
+                    <li>
+                        <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
+                            <i class="bi bi-question-circle"></i>
+                            <span>Need Help?</span>
+                        </a>
+                    </li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+
+                    <li>
+                        <a class="dropdown-item d-flex align-items-center" href="#" onclick="logoutMC()">
+                            <i class="bi bi-box-arrow-right"></i>
+                            <span>Sign Out</span>
+                        </a>
+                    </li>
+
+                </ul><!-- End Profile Dropdown Items -->
+            </li><!-- End Profile Nav -->
+
+        </ul>
+    </nav><!-- End Icons Navigation -->
+
+</header><!-- End Header -->
+
+<!--start-->
+<aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav" >
+
+        <li class="nav-item" >
+            <a class="nav-link collapsed" href="/dashboard" >
+                <i class="fa-solid fa-house " style="color: black"></i>
+                <span style="color: black"><b>HOME</b></span>
+            </a>
+        </li><!-- End Dashboard Nav -->
+
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#" >
+                <i class="fa-solid fa-sliders" style="color: black"></i><span style="color: black">Administration</span><i
+                    class="fa-solid fa-caret-down ms-auto"></i>
+            </a>
+            <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                <li id="MANAGE_USER_DETAILS" >
+                    <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="" href="/user">
+                        <i  class="fa-solid fa-star" style="color: black"></i><span
+                            style="color: black"  >User</span>
+                    </a>
+                </li>
+                <li id="MANAGE_EMPLOYEE_DETAILS">
+                    <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="" href="/employee">
+                        <i  class="fa-solid fa-star" style="color:black"></i><span
+                            style="color: black" >Employee</span>
+                    </a>
+                </li>
+                <li id="MANAGE_PRIVILAGE">
+                    <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="" href="/privilage">
+                        <i  class="fa-solid fa-star" style="color: black"></i><span
+                            style="color: black" >Privilege</span>
+                    </a>
+                </li>
+            </ul>
+        </li><!-- End Components Nav -->
+
+        <li id="STUDENT_DETAILS" class="nav-item">
+            <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="" href="/student">
+                <i  class="fa-sharp fa-solid fa-children" style="color: black"></i>
+                <span style="color: black" >Add Student</span>
+            </a>
+        </li><!-- End Forms Nav -->
+
+
+        <li id="STUDENT_BATCH_REGISTRTAION" class="nav-item">
+            <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="" href="/stubatchreg">
+                <i  class="fa-regular fa-id-card" style="color: black"></i>
+                <span style="color: black" >Batch Registration</span>
+            </a>
+        </li>
+
+        <li id="COURSE_PAYMENT" class="nav-item">
+            <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="" href="/coursepayment">
+                <i  class="fa-sharp fa-solid fa-money-bill" style="color: black"></i>
+                <span style="color: black"
+                >Student Payments</span>
+            </a>
+        </li>
+
+
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="" href="/attendance">
+                <i  class="fa-solid fa-check-to-slot" style="color: black"></i><span style="color: black" id="ATTENDANCE_MANAGEMENT"
+            >Student Attendance</span>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">
+                <i class="fa-brands fa-discourse" style="color: black"></i><span style="color: black"
+            >Course Implementations</span><i
+                    class="fa-solid fa-caret-down ms-auto"></i>
+            </a>
+            <ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                <li id="COURSE_IMPLEMENTATION">
+                    <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="" href="/course">
+                        <i  class="fa-solid fa-star" style="color: black"></i><span style="color: black"
+                    >Implement Course</span>
+                    </a>
+                </li>
+                <li id="STUDENT_BATCH_IMPLEMENTATION">
+                    <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="" href="/batch">
+                        <i  class="fa-solid fa-star" style="color: black"></i><span style="color: black"
+                    >Implement Batch</span>
+                    </a>
+                </li>
+            </ul>
+        </li><!-- End Icons Nav -->
+
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" data-bs-target="#chartss-nav" data-bs-toggle="collapse" href="#" >
+                <i class="fa-solid fa-sliders" style="color: black"></i><span style="color: black">Exam</span><i
+                    class="fa-solid fa-caret-down ms-auto"></i>
+            </a>
+            <ul id="chartss-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                <li id="MANAGE_EXAM" >
+                    <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="" href="/exam">
+                        <i  class="fa-solid fa-star" style="color: black"></i><span
+                            style="color: black"  >Define Exam</span>
+                    </a>
+                </li>
+                <li id="MANAGE_EXAM_APPLICATION">
+                    <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="" href="/exam_application">
+                        <i  class="fa-solid fa-star" style="color:black"></i><span
+                            style="color: black" >Exam Application</span>
+                    </a>
+                </li>
+                <li id="MANAGE_EXAM_RESULT">
+                    <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="" href="/exam_result">
+                        <i  class="fa-solid fa-star" style="color: black"></i><span
+                            style="color: black" >Exam Result</span>
+                    </a>
+                </li>
+            </ul>
+        </li><!-- End Components Nav -->
+
+
+
+
+        <!-- <li class="nav-item">
+             <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
+                 <i class="fa-solid fa-landmark" style="color: black"></i><span style="color: black"
+             >Lecture Hall</span><i
+                     class="fa-solid fa-caret-down ms-auto"></i>
+             </a>
+             <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                 <li id="LECTURE_HALL_MANAGEMENT">
+                     <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="" href="/lecturehall">
+                         <i  class="fa-solid fa-star" style="color: black"></i><span style="color: black"
+                     >Lecture Hall Management</span>
+                     </a>
+                 </li>
+                 <li id="SESSION_MANAGEMENT">
+                     <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="" href="/session">
+                         <i  class="fa-solid fa-star" style="color: black"></i><span style="color: black"
+                     >Session Management</span>
+                     </a>
+                 </li>
+             </ul>
+         </li>--><!-- End Charts Nav -->
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
+                <i class="fa-solid fa-face-grin-beam-sweat" style="color: black"></i><span style="color: black"
+            >Reports</span><i
+                    class="fa-solid fa-caret-down ms-auto"></i>
+            </a>
+            <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                <li>
+                    <a  href="/dailypaymenttbl">
+                        <i class="fa-solid fa-star" style="color: black"></i><span style="color: black"
+                    >Daily Payments</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/arrearsreport">
+                        <i class="fa-solid fa-star" style="color: black"></i><span style="color: black"
+                                                                                   style="color: white;">Arrears Report</span>
+                    </a>
+                </li>
+                <li>
+                    <a  href="/batchreport">
+                        <i class="fa-solid fa-star" style="color: black"></i><span style="color: black"
+                    >Batch Report</span>
+                    </a>
+                </li>
+                <li>
+                    <a  href="/batchcount">
+                        <i class="fa-solid fa-star" style="color: black"></i><span style="color: black"
+                    >Batch Count Report</span>
+                    </a>
+                </li>
+                <li>
+                    <a  href="/attendancebydate">
+                        <i class="fa-solid fa-star" style="color: black"></i><span style="color: black"
+                    >Batch Count Report</span>
+                    </a>
+                </li>
+                <li>
+                    <a  href="/finalresultreport">
+                        <i class="fa-solid fa-star" style="color: black"></i><span style="color: black"
+                    >Result Report</span>
+                    </a>
+                </li>
+            </ul>
+        </li><!-- End Tables Nav -->
+
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" onclick="logoutMC()">
+                <i class="fa-solid fa-right-to-bracket icon" style="color: black"></i>
+                <span style="color: black">Logout</span>
+            </a>
+        </li><!-- End Login Page Nav -->
+
+
+    </ul>
+
+</aside><!-- End Sidebar-->
+
+
+
+<main id="main" class="main">
+
+    <div class="pagetitle">
+        <h1><b>
+            <p>
+            <h1 style="color:  #ff6a1b; font-family: 'Times New Roman', Times, serif; font-size: 40px;">&nbsp<i
+                    class="fa-solid fa-screwdriver-wrench"></i><b>&nbspBatch Implementation</b></h1>
+            </p>
+        </b></h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item">Administration</li>
+                <li class="breadcrumb-item active">Course</li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+        <div class="row">
+            <div class="col-12">
+                <div class="card" id="cr"
+                     style="border-radius: 40px; border-color:  #0b6a6a;  border-width: 6px; padding-top: 30px; ">
+                    <div class="card-body">
+                        <!--tabs  ###########################################################################-->
+                        <ul class="nav nav-tabs">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="navLinkForm" onclick="changeTab('form')" href="#"
+                                   style="color: #114a65;"><b style="color:#114a65 ;">Batch
+                                    Form</b></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="navLinkTable" onclick="changeTab('table')" href="#"
+                                   style="color: #114a65;"><b
+                                        style="color:#114a65 ;">Batch
+                                    Table</b></a>
+                            </li>
+                        </ul>
+                        <!--form area #################################################################################-->
+                        <div id="divForm" style="display:block; margin-top: 10px;"><br>
+
+                            <!--################## Rquest ########################################-->
+
+                            <!--#################################Acadamic year##########################################3-->
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="mb-3">
+                                        <label for="cmbAcadamicYear" class="form-label">
+                                            <h6><b>&nbsp&nbspAcadamic Year : <b><span style="color: red;"><sup>(Required)</sup></span>
+                                            </b></b></h6>
+                                        </label>
+                                        <div class="input-group">
+                                            <select id="cmbAcadamicYear" class="form-select formcontrol" required
+                                                    data-bs-toggle="tooltip" data-bs-placement="top"
+                                                    title="Select Acadamic Year"
+                                                    onchange="selectBinder(cmbAcadamicYear,'','batchimplement','acadamic_year_id','oldbatchimplement')"></select>
+&nbsp
+                                            <button data-bs-toggle="modal" data-bs-target="#editeAcadamicYear"
+                                                    target="editeAcdamic"
+                                                    style="background-color: #0b585e; border-radius: 25px"><i
+                                                    class="fa-solid fa-plus" style="color: white"></i></button>
+
+
+                                            <div class="valid-feedback" style="border-radius: 20px;">
+                                                <b>Acadamic Year is Looks good :)</b>
+                                            </div>
+                                            <div class="invalid-feedback">
+                                                <b>Please Enter Acadamic Year :(</b>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-4">
+                                    <div class="mb-3">
+                                        <label for="cmbCourseCatogary" class="form-label">
+                                            <h6><b>&nbsp&nbspCourse Catogary : <b><span style="color: red;"><sup>(Required)</sup></span>
+                                            </b></b></h6>
+                                        </label>
+                                        <div class="input-group">
+                                            <select id="cmbCourseCatogary" class="form-select formcontrol" required
+                                                    data-bs-toggle="tooltip" data-bs-placement="top"
+                                                    title="Select Course Categary"
+                                                    onchange="selectBinder(cmbCourseCatogary,'','batchimplement','course_catogary_id','oldbatchimplement'); cmbCourseCodeAccCat(); cmbTheLecAccCouCat(); cmbPracLecAccCouCat(); hidePracDateAndPracLec();" ></select>
+                                            <div class="valid-feedback" style="border-radius: 20px;">
+                                                <b>Course Catogary is Looks good :)</b>
+                                            </div>
+                                            <div class="invalid-feedback">
+                                                <b>Please Enter Course catogary :(</b>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <!--###############################Course code##########################################-->
+                                <div class="col-4">
+                                    <div class="mb-3">
+                                        <label for="txtCourseNamee" class="form-label">
+                                            <h6><b>&nbsp&nbspCourse Name : <b><span
+                                                    style="color: red;"><sup>(Required)</sup></span>
+                                            </b></b></h6>
+                                        </label>
+                                        <div class="input-group">
+
+                                            <select id="txtCourseNamee" class="form-select formcontrol" required
+                                                    data-bs-toggle="tooltip" data-bs-placement="top"
+                                                    title="Select Course Name"
+                                                    onchange="selectBinder(txtCourseNamee,'','batchimplement','course_id','oldbatchimplement'); getCourseFee();"></select>
+                                            <div class="valid-feedback" style="border-radius: 20px;">
+                                                <b>Course Code is Looks good :)</b>
+                                            </div>
+                                            <div class="invalid-feedback">
+                                                <b>Please Enter Course Code :(</b>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <!--#####################################Course Type##################################3-->
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="mb-3">
+                                        <label for="cmbTheoryDay" class="form-label">
+                                            <h6><b>&nbsp&nbspTheory Day : <b><span
+                                                    style="color: red;"><sup>(Required)</sup></span>
+                                            </b></b></h6>
+                                        </label>
+                                        <div class="input-group">
+
+                                            <select id="cmbTheoryDay" class="form-select formcontrol" required
+                                                    data-bs-toggle="tooltip" data-bs-placement="top"
+                                                    title="Select Theory day"
+                                                    onchange="selectBinder(cmbTheoryDay,'','batchimplement','theory_day_id','oldbatchimplement');blockWeekDay(); getIntake(); getBatchName();"></select>
+                                            <div class="valid-feedback" style="border-radius: 20px;">
+                                                <b>Theory Day is Looks good :)</b>
+                                            </div>
+                                            <div class="invalid-feedback">
+                                                <b>Please Enter Theory Day :(</b>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <!--#########################Course Name ######################################################3-->
+                                <div class="col-6">
+                                    <div class="mb-3">
+                                        <label for="cmbPracticalDay" class="form-label">
+                                            <h6><b>&nbsp&nbspPractical Day : <b>
+                                            </b></b></h6>
+                                        </label>
+                                        <div class="input-group">
+
+                                            <select id="cmbPracticalDay" class="form-select formcontrol" required
+                                                    data-bs-toggle="tooltip" data-bs-placement="top"
+                                                    title="Select Course Type"
+                                                    onchange="selectBinder(cmbPracticalDay,'','batchimplement','practical_day_id','oldbatchimplement')"></select>
+                                            <div class="valid-feedback" style="border-radius: 20px;">
+                                                <b>Practical Day is Looks good :)</b>
+                                            </div>
+                                            <div class="invalid-feedback">
+                                                <b>Please Enter Practical Day :(</b>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--#####################################Course code########################################-->
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="mb-3">
+                                        <label for="cmbIntake" class="form-label">
+                                            <h6><b>&nbsp&nbspIntake : <b><span style="color: red;"><sup>(Required)</sup></span>
+                                            </b></b></h6>
+                                        </label>
+                                        <div class="input-group">
+
+                                            <select id="cmbIntake" class="form-select formcontrol" required
+                                                    data-bs-toggle="tooltip" data-bs-placement="top"
+                                                    title="Select Course Type"
+                                                    onchange="selectBinder(cmbIntake,'','batchimplement','intake_id','oldbatchimplement'); getBatchName();"></select>
+                                            <div class="valid-feedback" style="border-radius: 20px;">
+                                                <b>Intake is Looks good :)</b>
+                                            </div>
+                                            <div class="invalid-feedback">
+                                                <b>Please Enter Intake :(</b>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--##########################################Batch name#############################################################-->
+                                <div class="col-6">
+                                    <div class="mb-3">
+                                        <label for="txtBatchname" class="form-label">
+                                            <h6><b>&nbsp&nbspBatch Name : <b><span
+                                                    style="color: red;"><sup>(Required)</sup></span></b></b>
+                                            </h6>
+                                        </label>
+                                        <div class="input-group">
+
+                                            <input type="text" class="form-control formcontrol" id="txtBatchname"
+                                                   data-bs-toggle="tooltip" data-bs-placement="top"
+                                                   title="Create Course Code"
+                                                   onkeyup="textFieldValidator(txtBatchname,'','batchimplement','batch_name','oldbatchimplement')">
+                                            <div class="valid-feedback" style="border-radius: 20px;">
+                                                <b>Batch Name is Looks good :)</b>
+                                            </div>
+                                            <div class="invalid-feedback">
+                                                <b>Please Enter valid Batch Name :(</b>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="mb-3">
+                                        <label for="cmbTheoryLec" class="form-label">
+                                            <h6><b>&nbsp&nbspTheory Lecture : <b><span style="color: red;"><sup>(Required)</sup></span></b></b>
+                                            </h6>
+                                        </label>
+                                        <div class="input-group">
+
+                                            <select id="cmbTheoryLec" class="form-select formcontrol" required
+                                                    data-bs-toggle="tooltip" data-bs-placement="top"
+                                                    title="Select Acadamic Year"
+                                                    onchange="selectBinder(cmbTheoryLec,'','batchimplement','theory_lec_id','oldbatchimplement'); "></select>
+                                            <div class="valid-feedback" style="border-radius: 20px;">
+                                                <b>Theory Lecture Looks good :)</b>
+                                            </div>
+                                            <div class="invalid-feedback">
+                                                <b>Please Enter valid Theory Lecture :(</b>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--##########################################Batch name#############################################################-->
+                                <div class="col-6">
+                                    <div class="mb-3">
+                                        <label for="cmbPracticalLec" class="form-label">
+                                            <h6><b>&nbsp&nbspPractical Lecture : <b></b></b>
+                                            </h6>
+                                        </label>
+                                        <div class="input-group">
+
+                                            <select id="cmbPracticalLec" class="form-select formcontrol" required
+                                                    data-bs-toggle="tooltip" data-bs-placement="top"
+                                                    title="Select Acadamic Year"
+                                                    onchange="selectBinder(cmbPracticalLec,'','batchimplement','practical_lec_id','oldbatchimplement')"></select>
+                                            <div class="valid-feedback" style="border-radius: 20px;">
+                                                <b>Practical Lecture is Looks good :)</b>
+                                            </div>
+                                            <div class="invalid-feedback">
+                                                <b>Please Enter valid Practical Lecture :(</b>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                                <!--#############################################Course fee####################################################-->
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="mb-3">
+                                            <label for="txtStartDate" class="form-label">
+                                                <h6><b>&nbsp&nbspStart Date : <b><span style="color: red;"><sup>(Required)</sup></span>
+                                                </b></b></h6>
+                                            </label>
+                                            <div class="input-group">
+
+                                                <input type="date" class="form-control formcontrol" id="txtStartDate" onchange="dateFieldValidator(txtStartDate,'','batchimplement','start_date','oldbatchimplement'); getEndDate(); getRegDeadline(); getRegDeadlineDate();">
+                                                <div class="valid-feedback" style="border-radius: 20px;">
+                                                    <b>Start date is Looks good :)</b>
+                                                </div>
+                                                <div class="invalid-feedback">
+                                                    <b>Please Enter Valid Start date :(</b>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <!--################################# Reg fee ##########################################################-->
+
+                                    <div class="col-6">
+                                        <div class="mb-3">
+                                            <label for="txtEndDate" class="form-label">
+                                                <h6><b>&nbsp&nbspEnd Date : <b><span
+                                                        style="color: red;"><sup>(Required)</sup></span>
+                                                </b></b></h6>
+                                            </label>
+                                            <div class="input-group">
+
+                                                <input type="date" class="form-control formcontrol" id="txtEndDate" onchange="dateFieldValidator(txtEndDate,'','batchimplement','end_date','oldbatchimplement')">
+                                                <div class="valid-feedback" style="border-radius: 20px;">
+                                                    <b>End date is Looks good :)</b>
+                                                </div>
+                                                <div class="invalid-feedback">
+                                                    <b>Please Enter Valid End date :(</b>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="row">
+
+                                    <div class="col-6">
+                                        <div class="mb-3">
+                                            <label for="txtTheoryTime" class="form-label">
+                                                <h6><b>&nbsp&nbspTheory Time : <b><span style="color: red;"><sup>(Required)</sup></span>
+                                                </b></b></h6>
+                                            </label>
+                                            <div class="input-group">
+
+                                                <input type="text" class="form-control formcontrol" id="txtTheoryTime" onchange="timeFieldValidator(txtTheoryTime,'^(1[012]|[8-5]):[0-5][0-9](\\\\s)?(?i)(am|pm)$','batchimplement','therory_allocate_time','oldbatchimplement')">
+                                                <div class="valid-feedback" style="border-radius: 20px;">
+                                                    <b>Theory Time is Looks good :)</b>
+                                                </div>
+                                                <div class="invalid-feedback">
+                                                    <b>Please Enter Valid Theory Time :(</b>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-6">
+                                        <div class="mb-3">
+                                            <label for="txtPracticalTime" class="form-label">
+                                                <h6><b>&nbsp&nbspPractical Time : <b>
+                                                </b></b></h6>
+                                            </label>
+                                            <div class="input-group">
+
+                                                <input type="text" class="form-control formcontrol" id="txtPracticalTime" onchange="timeFieldValidator(txtPracticalTime,'','batchimplement','practical_allocate_time','oldbatchimplement')">
+                                                <div class="valid-feedback" style="border-radius: 20px;">
+                                                    <b>Practical Time is Looks good :)</b>
+                                                </div>
+                                                <div class="invalid-feedback">
+                                                    <b>Please Enter Valid Practical Time :(</b>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="mb-3">
+                                            <label for="txtCourseFee" class="form-label">
+                                                <h6><b>&nbsp&nbspCourse Fee : <b><span style="color: red;"><sup>(Required)</sup></span>
+                                                </b></b></h6>
+                                            </label>
+                                            <div class="input-group">
+
+                                                <input type="text" class="form-control formcontrol" id="txtCourseFee"
+                                                       required data-bs-toggle="tooltip" data-bs-placement="top"
+                                                       title="Enter Start Date"
+                                                       onkeyup="textFieldValidator(txtCourseFee,'^([1-9][0-9][0-9][0-9]|[1-9][0-9][0-9][0-9][0-9]).00$','batchimplement','course_fee','oldbatchimplement')">
+                                                <div class="valid-feedback" style="border-radius: 20px;">
+                                                    <b>Course Fee is Looks good :)</b>
+                                                </div>
+                                                <div class="invalid-feedback">
+                                                    <b>Please Enter Valid Course Fee :(</b>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-6">
+                                        <div class="mb-3">
+                                            <label for="cmbInstallmentNumber" class="form-label">
+                                                <h6><b>&nbsp&nbspInstallment Number : <b><span style="color: red;"><sup>(Required)</sup></span>
+                                                </b></b></h6>
+                                            </label>
+                                            <div class="input-group">
+
+                                                <select id="cmbInstallmentNumber" class="form-select formcontrol" required
+                                                        data-bs-toggle="tooltip" data-bs-placement="top"
+                                                        title="Select Acadamic Year"
+                                                        onchange="insallmentBinding()"></select>
+                                                <div class="valid-feedback" style="border-radius: 20px;">
+                                                    <b>Installment Number is Looks good :)</b>
+                                                </div>
+                                                <div class="invalid-feedback">
+                                                    <b>Please Select Installment NUmber :(</b>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="row">
+
+                                    <div class="col-6">
+                                        <div class="mb-3">
+                                            <label for="txtRegDeadline" class="form-label">
+                                                <h6><b>&nbsp&nbspReg Deadline : <b><span style="color: red;"><sup>(Required)</sup></span>
+                                                </b></b></h6>
+                                            </label>
+                                            <div class="input-group">
+
+                                                <input type="date" class="form-control formcontrol" id="txtRegDeadline" onchange="dateFieldValidator(txtRegDeadline,'','batchimplement','reg_deadline','oldbatchimplement')">
+                                                <div class="valid-feedback" style="border-radius: 20px;">
+                                                    <b>Registration Deadline is Looks good :)</b>
+                                                </div>
+                                                <div class="invalid-feedback">
+                                                    <b>Please Enter Valid Registration Deadline :(</b>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+
+
+                                <div class="row">
+
+                                    <div class="col-6">
+                                        <div class="mb-3">
+                                            <label for="cmbBatchStatus" class="form-label">
+                                                <h6><b>&nbsp&nbspBatch Status : <b><span style="color: red;"><sup>(Required)</sup></span>
+                                                </b></b></h6>
+                                            </label>
+                                            <div class="input-group">
+
+                                                <select id="cmbBatchStatus" class="form-select formcontrol" required
+                                                        data-bs-toggle="tooltip" data-bs-placement="top"
+                                                        title="Select Course Type"
+                                                        onchange="selectBinder(cmbBatchStatus,'','batchimplement','batch_status_id','oldbatchimplement')"></select>
+                                                <div class="valid-feedback" style="border-radius: 20px;">
+                                                    <b>Batch Status is Looks good :)</b>
+                                                </div>
+                                                <div class="invalid-feedback">
+                                                    <b>Please Enter Valid Batch Status :(</b>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-6">
+                                        <div class="mb-3">
+                                            <label for="dateBatchAssignDate" class="form-label">
+                                                <h6><b>&nbsp&nbspAssign Date :
+                                                </b></b></h6>
+                                            </label>
+
+                                            <input type="text" class="form-control-plaintext formcontrol" id="dateBatchAssignDate">
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="mb-3">
+                                <label for="txtCourseDes" class="form-label">
+                                    <h6><b>&nbsp&nbspDescription : </b>
+                                    </h6>
+                                </label>
+                                <div class="input-group">
+
+                                    <textarea class="form-control formcontrol" id="txtCourseDes"
+                                              data-bs-toggle="tooltip" data-bs-placement="top"
+                                              title="Add Description"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    <div class="row">
+                        <div class="col-4">
+                            <button class="btn btn-outline-danger" id="btnClearBatch" onclick="resetBatchImplForm();" ><b><i class="fa-regular fa-trash-can" ></i> &nbsp&nbspClear
+                                Batch</b></button>
+                        </div>
+                        <div class="col-6">
+                            <button class="btn btn-outline-success" type="submit" onclick="btnAddMC()"
+                                    id="btnAddCourse"><b><i
+                                    class="fa-solid fa-arrow-up-from-bracket"></i> &nbsp&nbspAdd
+                                Batch</b></button>
+                            &nbsp&nbsp
+                            <button class="btn btn-outline-warning" id="btnUpdate" onclick="btnUpdateMC()"><b><i
+                                    class="fa-solid fa-pen-to-square"></i> &nbsp&nbspUpdate
+                                Batch</b></button>
+                            &nbsp&nbsp
+
+                        </div>
+                    </div>
+                </div>
+                    </div>
+                </div>
+                </form>
+
+
+                    <div class="modal" id="editeAcadamicYear">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header" style="background-color: #0b585e; color: white">
+                                    <h3>Add Acadamic Year</h3>
+                                </div>
+                                <div class="modal-body">
+                                    <br><br>
+                                    <div class="row">
+                                        <div class="col-12" style="padding-left: 20px; padding-right: 20px">
+                                            <div class="mb-3">
+                                                <label for="txtAcadamicYear" class="form-label">
+                                                    <h6><b>&nbsp&nbspAcadamic Year : </b>
+                                                    </h6>
+                                                </label>
+                                                <div class="input-group">
+
+                                                    <input type="text" class="form-control formcontrol"
+                                                           id="txtAcadamicYear" data-bs-toggle="tooltip"
+                                                           data-bs-placement="top" title=""
+                                                           onkeyup="textFieldValidator(txtAcadamicYear,'','acadamicyear','name','oldacadamicyear');"
+                                                           required>
+                                                    <div class="valid-feedback" style="border-radius: 20px;">
+                                                        <b>Acadamic Year is Looks good :)</b>
+                                                    </div>
+                                                    <div class="invalid-feedback">
+                                                        <b>Please Enter Acadamic Year :(</b>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btnClose" data-bs-dismiss="modal"
+                                            style="background-color: #0b585e; border-radius: 15px; color: white; border: none; padding: 9px 30px;">
+                                        <i class="fa-solid fa-xmark"></i>&nbsp&nbspClose
+                                    </button>
+                                    <button class="btnAddDuration" onclick="btnAddAcdamicYear();"
+                                            style="background-color: #0b585e; border-radius: 15px; color: white; border: none; padding: 9px 30px;">
+                                        <i class="fa-regular fa-up"></i>&nbsp&nbspAdd
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!--Table area ###########################################################################-->
+                <div id="divTable" style="display: none; margin-top: 30px; margin-right:30px ; margin-left: 30px;">
+
+                    <div class="row mt-2">
+                        <div class="col-4">
+                        </div>
+                        <div class="col-4">
+                            <div class="row">
+                                <div class="col-4">
+                                    <button class="rounded-circle" style="border-width: 5px" disabled id="btnEdit" onclick="formRefill('editob');"><i
+                                            class="fa-solid fa-pen-to-square"></i></button>
+                                </div>
+                                <div class="col-4">
+                                    <button class="rounded-circle" style="border-width: 5px" disabled id="btnDelete" onclick="rowDelete('editob');"><i class="fa-solid fa-trash"></i></button>
+                                </div>
+
+                                <div class="col-4">
+                                    <button class="rounded-circle" style="border-width: 5px" disabled id="btnView" onclick="rowView('editob')"><i class="fa-sharp fa-solid fa-eye"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                        </div>
+                    </div>
+
+
+                    <div class="row mt-2">
+                        <table class="table"
+                               style="color: #114a65; font-style: normal; font-family: Arial, Helvetica, sans-serif; "
+                               id="tblBatchImplemen">
+                            <thead>
+                            <tr>
+                                <th
+                                        style="background-color: #ff6a1b; color: black; border-bottom-left-radius: 10px; border-top-left-radius: 10px;">
+
+                                </th>
+                                <th
+                                        style="background-color: #ff6a1b; color: black; ">
+                                    #
+                                </th>
+                                <th style="background-color: #ff6a1b; color: black; ">Acadamic Year</th>
+                                <th style="background-color: #ff6a1b; color: black;">Batch Name</th>
+                                <!-- <th style="background-color: #28789c; color: aliceblue;">Designation </th>-->
+                                <th style="background-color: #ff6a1b; color: black; text-align:center ">Theory Day
+                                </th>
+                                <th style="background-color: #ff6a1b; color: black; ">Course Fee</th>
+                                <th style="background-color: #ff6a1b;color: black; border-bottom-right-radius: 10px; border-top-right-radius:10px ;">Batch Status</th>
+                            </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        </div>
+
+    </section>
+    <!-- <div id="err">
+
+    </div>-->
+</main><!-- End #main -->
+
+
+
+</body>
+
+</html>
